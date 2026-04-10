@@ -6,14 +6,14 @@ var state_name : String = "Jump"
 
 var play_char : CharacterBody3D
 
-func enter(play_char_ref : CharacterBody3D) -> void:
+func enter(play_char_ref : CharacterBody3D):
 	play_char = play_char_ref
 	
 	verifications()
 	
 	jump()
 	
-func verifications() -> void:
+func verifications():
 	if play_char.floor_snap_length != 0.0:  play_char.floor_snap_length = 0.0
 	if play_char.jump_cooldown < play_char.jump_cooldown_ref: play_char.jump_cooldown = play_char.jump_cooldown_ref
 	if play_char.hit_ground_cooldown != play_char.hit_ground_cooldown_ref: play_char.hit_ground_cooldown = play_char.hit_ground_cooldown_ref
@@ -21,7 +21,7 @@ func verifications() -> void:
 	play_char.tween_hitbox_height(play_char.base_hitbox_height)
 	play_char.tween_model_height(play_char.base_model_height)
 	
-func physics_update(delta : float) -> void:
+func physics_update(delta : float):
 	applies(delta)
 	
 	play_char.gravity_apply(delta)

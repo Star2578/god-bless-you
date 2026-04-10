@@ -202,7 +202,7 @@ func bob(delta : float) -> void:
 	var bob_sinus : float = sin(step_timer * 2.0 * PI) * 0.5
 	
 	#ceiling check raycast used here to avoid camera clipping through ceiling when for example, play char is crouching
-	if enable_headbob and state != "Idle" and state != "Jump" and !play_char.ceiling_check.is_colliding():
+	if enable_headbob and state != "Idle" and state != "Jump" and !play_char.is_on_ceiling():
 		#the bobbing scale is related to the player character movement speed
 		
 		#convert bob_pitch and bob_roll from degrees to radians, for a smoother bobbing effect
@@ -219,7 +219,7 @@ func bob(delta : float) -> void:
 		camera.v_offset += bob_height
 		camera.v_offset = clamp(camera.v_offset, 0.0, cam_max_v_offset)
 		
-	elif enable_headbob and (state == "Idle" or state == "Jump" or play_char.ceiling_check.is_colliding()):
+	elif enable_headbob and (state == "Idle" or state == "Jump" or play_char.is_on_ceiling()):
 		#smoothly reset position vertical offset
 		#if not applied, the camera can be upper the play char body for listed above states, resulting in wrong view
 		if camera.v_offset != 0.0: camera.v_offset = move_toward(camera.v_offset, 0.0, cam_v_offset_to_0_speed * delta)

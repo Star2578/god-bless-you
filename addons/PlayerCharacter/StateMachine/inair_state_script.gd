@@ -44,7 +44,7 @@ func applies(delta : float) -> void:
 func input_management() -> void:
 	if Input.is_action_just_pressed(play_char.jump_action):
 		#check if can jump buffer
-		if play_char.floor_check.is_colliding() and play_char.last_frame_position.y > play_char.position.y and play_char.nb_jumps_in_air_allowed <= 0: play_char.jump_buff_on = true
+		if play_char.is_on_floor() and play_char.last_frame_position.y > play_char.position.y and play_char.nb_jumps_in_air_allowed <= 0: play_char.jump_buff_on = true
 		#check if can coyote jump
 		if play_char.was_on_floor and play_char.coyote_jump_cooldown > 0.0 and play_char.last_frame_position.y > play_char.position.y and play_char.jump_cooldown < 0.0:
 			play_char.coyote_jump_on = true

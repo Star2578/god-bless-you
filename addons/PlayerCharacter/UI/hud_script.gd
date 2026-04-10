@@ -33,7 +33,7 @@ func display_properties() -> void:
 	velocity_label_text.set_text(str(round_to_3_decimals(play_char.velocity.length())))
 	velocity_vector_label_text.set_text(str("[ ", round_to_3_decimals(play_char.velocity.x)," ", round_to_3_decimals(play_char.velocity.y)," ", round_to_3_decimals(play_char.velocity.z), " ]"))
 	is_on_floor_label_text.set_text(str(play_char.is_on_floor()))
-	ceiling_check_label_text.set_text(str(play_char.ceiling_check.is_colliding()))
+	ceiling_check_label_text.set_text(str(play_char.is_on_ceiling()))
 	jump_buffer_label_text.set_text(str(play_char.jump_buff_on))
 	coyote_time_label_text.set_text(str(round_to_3_decimals(play_char.coyote_jump_cooldown)))
 	nb_jumps_in_air_allowed_label_text.set_text(str(play_char.nb_jumps_in_air_allowed))

@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dliui74a63tsp"]
+
+[ext_resource type="Shader" uid="uid://ocr2olagonoh" path="res://shaders/retro.gdshader" id="1_7ekbn"]
+
+[resource]
+shader = ExtResource("1_7ekbn")
+shader_parameter/palette = PackedColorArray(0.0627451, 0.09411765, 0.1254902, 1, 0.16862746, 0.18431373, 0.2901961, 1, 0.30980393, 0.2901961, 0.4, 1, 0.44705883, 0.42745098, 0.5411765, 1, 0.6039216, 0.58431375, 0.68235296, 1, 0.76862746, 0.74509805, 0.8156863, 1, 0.16470589, 0.105882354, 0.13333334, 1, 0.3529412, 0.18431373, 0.23137255, 1, 0.5529412, 0.30980393, 0.2901961, 1, 0.72156864, 0.46666667, 0.37254903, 1, 0.8509804, 0.627451, 0.4, 1, 0.92156863, 0.8117647, 0.6039216, 1, 0.11764706, 0.22745098, 0.22745098, 1, 0.18039216, 0.36862746, 0.36862746, 1, 0.3019608, 0.54509807, 0.54509807, 1, 0.54901963, 0.7529412, 0.65882355, 1)
+shader_parameter/dithering_mode = 1
+shader_parameter/spread = 0.2
+shader_parameter/target_height = 1024.00004294
+shader_parameter/use_downsampling = true

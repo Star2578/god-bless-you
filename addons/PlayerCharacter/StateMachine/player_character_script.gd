@@ -71,8 +71,9 @@ var coyote_jump_on: bool = false
 @export var run_action: StringName = "play_char_run_action"
 @export var crouch_action: StringName = "play_char_crouch_action"
 @export var jump_action: StringName = "play_char_jump_action"
+@export var interact_action: StringName = "play__char_interact_action"
 @onready var input_actions_list : Array[StringName] = [move_forward_action, move_backward_action, move_left_action, move_right_action, 
-run_action, crouch_action, jump_action]
+run_action, crouch_action, jump_action, interact_action]
 @export var check_on_ready_if_inputs_registered : bool = true
 var default_input_actions : Dictionary
 
@@ -83,10 +84,8 @@ var default_input_actions : Dictionary
 @onready var hitbox: CollisionShape3D = %Hitbox
 @onready var state_machine: StateMachine = %StateMachine
 @onready var hud: CanvasLayer = %HUD
-@onready var ceiling_check: RayCast3D = %CeilingCheck
-@onready var floor_check: RayCast3D = %FloorCheck
 
-func _ready() -> void:
+func _ready():
 	#set and value references
 	hit_ground_cooldown_ref = hit_ground_cooldown
 	jump_cooldown_ref = jump_cooldown
@@ -97,7 +96,7 @@ func _ready() -> void:
 	build_default_keybinding()
 	input_actions_check()
 	
-func build_default_keybinding() -> void:
+func build_default_keybinding():
 	#build it in runtime to ensure that export variables have been set
 	default_input_actions = {
 		move_forward_action : [Key.KEY_W, Key.KEY_UP],
@@ -107,9 +106,10 @@ func build_default_keybinding() -> void:
 		run_action : [Key.KEY_SHIFT],
 		crouch_action : [Key.KEY_C],
 		jump_action : [Key.KEY_SPACE],
+		interact_action : [Key.KEY_E],
 	}
 	
-func input_actions_check() -> void:
+func input_actions_check():
 	#check if the input actions written in the editor are the same as the ones registered in the Input map, and if they are written correctly
 	#if not, add it to runtime Input map with default keybindings
 	if check_on_ready_if_inputs_registered:
@@ -136,17 +136,17 @@ func input_actions_check() -> void:
 					input_event_key.physical_keycode = keycode
 					InputMap.action_add_event(input_action, input_event_key)
 					
-func _physics_process(_delta: float) -> void:
+func _physics_process(_delta: float):
 	modify_physics_properties()
 
 	move_and_slide()
 	
-func modify_physics_properties() -> void:
+func modify_physics_properties():
 	last_frame_position = global_position #get play char global position every frame
 	last_frame_velocity = velocity #get play char velocity every frame
 	was_on_floor = !is_on_floor() #check if play char was on floor every frame
 	
-func gravity_apply(delta: float) -> void:
+func gravity_apply(delta: float):
 	# if play char goes up, apply jump gravity
 	#otherwise, apply fall gravity
 	if not is_on_floor(): #no need to push play char if he's already on the floor
@@ -154,7 +154,7 @@ func gravity_apply(delta: float) -> void:
 		elif velocity.y < 0.0: velocity.y += fall_gravity * delta
 		
 #use of 2 tweens to change the hitbox and model heights, relative to a specific state
-func tween_hitbox_height(state_hitbox_height : float) -> void:
+func tween_hitbox_height(state_hitbox_height : float):
 	var hitbox_tween: Tween = create_tween()
 	if hitbox != null:
 		hitbox_tween.tween_method(func(v): set_hitbox_height(v), hitbox.shape.height, 
@@ -164,11 +164,11 @@ func tween_hitbox_height(state_hitbox_height : float) -> void:
 		hitbox_tween.tween_interval(0.1)
 	hitbox_tween.finished.connect(Callable(hitbox_tween, "kill"))
 
-func set_hitbox_height(value: float) -> void:
+func set_hitbox_height(value: float):
 	if hitbox.shape is CapsuleShape3D:
 		hitbox.shape.height = value
 		
-func tween_model_height(state_model_height : float) -> void:
+func tween_model_height(state_model_height : float):
 	var model_tween: Tween = create_tween()
 	if model != null:
 		model_tween.tween_property(model, "scale:y", 

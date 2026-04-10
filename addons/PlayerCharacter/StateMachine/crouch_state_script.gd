@@ -66,7 +66,7 @@ func input_management() -> void:
 			
 func raycast_verification() -> bool:
 	#check if the raycast used to check ceilings is colliding or not
-	return play_char.ceiling_check.is_colliding()
+	return play_char.is_on_ceiling()
 	
 func move(delta : float) -> void:
 	play_char.input_direction = Input.get_vector(play_char.move_left_action, play_char.move_right_action, play_char.move_forward_action, play_char.move_backward_action)

@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://d3s8yxuvpmekm" path="res://addons/PlayerCharacter/StateMachine/player_character_script.gd" id="1_h128t"]
 [ext_resource type="Script" uid="uid://b0fbr48rbvn27" path="res://addons/PlayerCharacter/Camera/camera_script.gd" id="2_x12n0"]
+[ext_resource type="Script" uid="uid://qnuv5xlitbvx" path="res://addons/PlayerCharacter/InteractHandler.gd" id="10_dwwo3"]
+[ext_resource type="Texture2D" uid="uid://dtliihyced2em" path="res://assets/hands/Untitled-1.png" id="10_i3yl6"]
 [ext_resource type="StyleBox" uid="uid://c50syhy1a4dmh" path="res://addons/PlayerCharacter/UI/player_character_ui_theme.tres" id="11_kcsu1"]
 [ext_resource type="LabelSettings" uid="uid://d1rg1oruwidf" path="res://addons/PlayerCharacter/UI/label_font_setting.tres" id="12_gnmoh"]
-[ext_resource type="Texture2D" uid="uid://c0suacp5lc3ss" path="res://assets/hands/test-1.png" id="13_f04tl"]
+[ext_resource type="Material" uid="uid://dliui74a63tsp" path="res://shaders/retro_shader_material.tres" id="14_i3yl6"]
 [ext_resource type="Script" uid="uid://dx02l6p6behb8" path="res://addons/PlayerCharacter/UI/hud_script.gd" id="16_5jm78"]
 [ext_resource type="Script" uid="uid://sca7ypsol83f" path="res://addons/PlayerCharacter/StateMachine/state_machine_script.gd" id="54_e0r17"]
 [ext_resource type="Script" uid="uid://stil4xkf3tk0" path="res://addons/PlayerCharacter/StateMachine/idle_state_script.gd" id="55_dayh2"]
@@ -84,10 +86,35 @@ fov = 90.0
 near = 0.01
 far = 1000.0
 
+[node name="HoldPos" type="Marker3D" parent="CameraHolder/Camera" unique_id=216480215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.585647e-08, 0, -1.50662)
+
+[node name="InteractRay" type="RayCast3D" parent="CameraHolder/Camera" unique_id=2136533167]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.050000012, 0)
+target_position = Vector3(-2, 0, 0)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_custom_color = Color(0, 1, 0, 1)
+debug_shape_thickness = 5
+script = ExtResource("10_dwwo3")
+
 [node name="Sprite3D" type="Sprite3D" parent="CameraHolder/Camera" unique_id=808809874]
 transform = Transform3D(0.19696155, -0.034729637, 0, 0.034729637, 0.19696155, 0, 0, 0, 0.2, 0.505, -0.2, -0.415)
 no_depth_test = true
-texture = ExtResource("13_f04tl")
+texture = ExtResource("10_i3yl6")
+
+[node name="ShaderFilter" type="CanvasLayer" parent="CameraHolder/Camera" unique_id=1096882083]
+
+[node name="Retro" type="ColorRect" parent="CameraHolder/Camera/ShaderFilter" unique_id=1549188797]
+material = ExtResource("14_i3yl6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Hitbox" type="CollisionShape3D" parent="." unique_id=599971163]
 unique_name_in_owner = true
@@ -100,19 +127,6 @@ material_override = SubResource("StandardMaterial3D_6bkys")
 mesh = SubResource("CapsuleMesh_p2iaj")
 
 [node name="Raycasts" type="Node3D" parent="." unique_id=2079423533]
-
-[node name="CeilingCheck" type="RayCast3D" parent="Raycasts" unique_id=815494865]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.758088, 0)
-exclude_parent = false
-target_position = Vector3(0, 3, 0)
-debug_shape_custom_color = Color(1, 0, 0, 1)
-
-[node name="FloorCheck" type="RayCast3D" parent="Raycasts" unique_id=552044089]
-unique_name_in_owner = true
-exclude_parent = false
-target_position = Vector3(0, -3, 0)
-debug_shape_custom_color = Color(0, 0, 0.956863, 1)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=382546849]
 unique_name_in_owner = true

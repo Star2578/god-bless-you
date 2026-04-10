@@ -6,7 +6,7 @@
 [node name="Node3D" type="Node3D" unique_id=1341646867]
 
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("2_gqv1f")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 14, 1, -6)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 14, 1, -6)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=574483698]
 transform = Transform3D(1, 0, 0, 0, 0.5478261, 0.83659226, 0, -0.83659226, 0.5478261, 0, 11.060055, 0)
