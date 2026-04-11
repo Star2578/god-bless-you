@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://osstp0wmx2tf" path="res://assets/school/class_room_build_Plane_11.png" id="11_vnjjx"]
 [ext_resource type="Texture2D" uid="uid://c8oflu5rogme5" path="res://assets/school/class_room_build_Plane.png" id="12_dwmht"]
 [ext_resource type="Texture2D" uid="uid://bd3oxmw7x5nl7" path="res://assets/school/class_room_build_Plane_13.png" id="13_oaapd"]
-[ext_resource type="PackedScene" uid="uid://dfgl5ru48mfpn" path="res://scenes/objects/student_table.tscn" id="13_w8u7m"]
 [ext_resource type="Texture2D" uid="uid://bcvnhe7a3lh74" path="res://assets/school/class_room_build_Plane_12.png" id="14_flnwf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mcknw"]
@@ -1325,6 +1324,3 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.9
 
 [node name="door_009" parent="." unique_id=1587870201 instance=ExtResource("2_rbp0h")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.960337, 0.7324218, -28.668053)
-
-[node name="table2" parent="." unique_id=254244236 instance=ExtResource("13_w8u7m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24725467, 0.68003, -0.7910173)

@@ -71,9 +71,11 @@ var coyote_jump_on: bool = false
 @export var run_action: StringName = "play_char_run_action"
 @export var crouch_action: StringName = "play_char_crouch_action"
 @export var jump_action: StringName = "play_char_jump_action"
-@export var interact_action: StringName = "play__char_interact_action"
+@export var interact_prim_action: StringName = "play_char_interact_prim_action"
+@export var interact_m1_action: StringName = "play_char_interact_m1_action"
+@export var interact_m2_action: StringName = "play_char_interact_m2_action"
 @onready var input_actions_list : Array[StringName] = [move_forward_action, move_backward_action, move_left_action, move_right_action, 
-run_action, crouch_action, jump_action, interact_action]
+run_action, crouch_action, jump_action, interact_prim_action, interact_m1_action, interact_m2_action]
 @export var check_on_ready_if_inputs_registered : bool = true
 var default_input_actions : Dictionary
 
@@ -106,7 +108,9 @@ func build_default_keybinding():
 		run_action : [Key.KEY_SHIFT],
 		crouch_action : [Key.KEY_C],
 		jump_action : [Key.KEY_SPACE],
-		interact_action : [Key.KEY_E],
+		interact_prim_action : [Key.KEY_E],
+		interact_m1_action : [MouseButton.MOUSE_BUTTON_LEFT],
+		interact_m2_action : [MouseButton.MOUSE_BUTTON_RIGHT],
 	}
 	
 func input_actions_check():
@@ -131,10 +135,21 @@ func input_actions_check():
 				.format({"input": input_action, "keys": String(", ").join(key_names)}))
 				
 				InputMap.add_action(input_action)
-				for keycode in default_input_actions[input_action]:
-					var input_event_key = InputEventKey.new()
-					input_event_key.physical_keycode = keycode
-					InputMap.action_add_event(input_action, input_event_key)
+				for input_val in default_input_actions[input_action]:
+					var event: InputEvent
+					
+					# MouseButton constants are small integers (1-9)
+					# Key constants are very large integers (usually > 400,000)
+					if input_val < 32: 
+						var mouse_event = InputEventMouseButton.new()
+						mouse_event.button_index = input_val
+						event = mouse_event
+					else:
+						var key_event = InputEventKey.new()
+						key_event.physical_keycode = input_val
+						event = key_event
+					
+					InputMap.action_add_event(input_action, event)
 					
 func _physics_process(_delta: float):
 	modify_physics_properties()

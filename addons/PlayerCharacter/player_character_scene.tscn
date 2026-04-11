@@ -42,6 +42,7 @@ platform_floor_layers = 4278190081
 script = ExtResource("1_h128t")
 desired_move_speed_curve = SubResource("Curve_2tsxa")
 in_air_move_speed_curve = SubResource("Curve_br1r7")
+nb_jumps_in_air_allowed = 0
 
 [node name="StateMachine" type="Node" parent="." unique_id=931857651 node_paths=PackedStringArray("initial_state")]
 unique_name_in_owner = true
@@ -76,7 +77,7 @@ metadata/_custom_type_script = "uid://bh3rdvokmrar1"
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.55, 0)
 script = ExtResource("2_x12n0")
-bob_height_divider = 1000.0
+bob_frequency = 5.0
 
 [node name="Camera" type="Camera3D" parent="CameraHolder" unique_id=713894208]
 unique_name_in_owner = true

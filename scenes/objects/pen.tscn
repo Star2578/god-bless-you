@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://y2jplmdr8ybu"]
+
+[ext_resource type="PackedScene" uid="uid://cgeqcnpgcexqj" path="res://assets/school/pen.glb" id="1_e0ta7"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_1n3mq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_a32qj"]
+radius = 0.005348678
+height = 0.2180799
+
+[node name="Pen" type="RigidBody3D" unique_id=131724509]
+mass = 0.1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=711187702]
+transform = Transform3D(0.7114772, 0, 0, 0, 0.7114772, 0, 0, 0, 0.7114772, 0, -0.030254705, 0)
+shape = SubResource("CapsuleShape3D_a32qj")
+
+[node name="pen2" parent="." unique_id=876406715 instance=ExtResource("1_e0ta7")]
+
+[node name="Area3D" type="Area3D" parent="pen2" unique_id=1943985412]
+collision_layer = 2
+script = ExtResource("2_1n3mq")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pen2/Area3D" unique_id=1566999364]
+transform = Transform3D(0.7114772, 0, 0, 0, 0.7114772, 0, 0, 0, 0.7114772, 0, -0.030254705, 0)
+shape = SubResource("CapsuleShape3D_a32qj")

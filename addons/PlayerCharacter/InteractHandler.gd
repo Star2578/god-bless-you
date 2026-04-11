@@ -1,5 +1,7 @@
 extends RayCast3D
 
+@export var throw_force: float = 15.0
+
 @onready var play_char : PlayerCharacter = $"../../../../PlayerCharacter"
 @onready var hold_pos = %Camera/HoldPos
 var held_object: RigidBody3D = null
@@ -17,8 +19,16 @@ func _physics_process(delta):
 		held_object.angular_velocity = Vector3.ZERO
 
 func input_management():
-	if Input.is_action_just_pressed(play_char.interact_action):
+	if Input.is_action_just_pressed(play_char.interact_prim_action):
 		interact_with()
+	if Input.is_action_just_pressed(play_char.interact_m1_action):
+		print("m1")
+		if held_object:
+			throw()
+	if Input.is_action_just_pressed(play_char.interact_m2_action):
+		print("m2")
+		if held_object:
+			release_object()
 
 func interact_with():
 	var collide = get_collider()
@@ -27,7 +37,9 @@ func interact_with():
 		var x = collide as Interactable
 		
 		if x.pick3d:
-			print("pick3d")
+			if held_object:
+				release_object()
+			
 			pick_up(x.rigid_body)
 		else:
 			print("interact")
@@ -41,8 +53,18 @@ func pick_up(body: RigidBody3D):
 	# We use layers to stop it from colliding with the player while held
 	held_object.set_collision_layer_value(1, false)
 
+func throw():
+	held_object.gravity_scale = 1.0
+	held_object.set_collision_layer_value(1, true)
+	
+	var throw_dir = -play_char.cam.global_basis.z
+	
+	held_object.apply_central_impulse(throw_dir * throw_force * held_object.mass)
+	
+	held_object = null
+	print("Object thrown!")
+
 func release_object():
-	if held_object:
-		held_object.gravity_scale = 1.0
-		held_object.set_collision_layer_value(1, true)
-		held_object = null
+	held_object.gravity_scale = 1.0
+	held_object.set_collision_layer_value(1, true)
+	held_object = null
