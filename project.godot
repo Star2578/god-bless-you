@@ -29,6 +29,21 @@ AchievementManager="*uid://lr30cow8la70"
 
 Particle=""
 
+[debug_draw_3d]
+
+settings/addon_root_folder="res://addons/debug_draw_3d"
+
+[global_group]
+
+NPC=""
+
+[layer_names]
+
+3d_physics/layer_1="World"
+3d_physics/layer_4="RagdollBone"
+3d_physics/layer_5="RigidBody"
+3d_physics/layer_6="NPC"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

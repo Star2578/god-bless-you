@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://co3qnnyc7m6oi"]
 
+[ext_resource type="Script" uid="uid://tuwyoa4osspe" path="res://scenes/objects/physics_sphere.gd" id="1_dh4qc"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_wve61"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wve61"]
 
 [node name="PhysicsSphere" type="RigidBody3D" unique_id=2144164704]
 mass = 3.0
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_dh4qc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1755638442]
 mesh = SubResource("SphereMesh_wve61")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=744214472]
 shape = SubResource("SphereShape3D_wve61")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
