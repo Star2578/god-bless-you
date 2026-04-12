@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://ccoib4q0g35od"
 [autoload]
 
 GameController="*uid://b5c6gc41nw3ym"
+AchievementManager="*uid://lr30cow8la70"
 
 [global_group]
 

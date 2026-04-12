@@ -14,6 +14,9 @@ func _ready():
 
 func explode():
 	print("EXPLODE!")
+
+	AchievementManager.unlock_achievement("beware_explosive")
+	
 	var bodies = query_area.get_overlapping_bodies()
 	
 	for body in bodies:

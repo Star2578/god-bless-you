@@ -1,6 +1,51 @@
 [gd_scene format=3 uid="uid://dxek5mihto16h"]
 
 [ext_resource type="Script" uid="uid://d37berb3crayo" path="res://scripts/main_menu.gd" id="1_sbiqi"]
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="2_e66b0"]
+[ext_resource type="Material" uid="uid://dliui74a63tsp" path="res://shaders/retro_shader_material.tres" id="2_ngy02"]
+[ext_resource type="Theme" uid="uid://bh0tggtrikq4a" path="res://default_theme.tres" id="3_3r4tm"]
+[ext_resource type="Texture2D" uid="uid://8vg3agnbqufn" path="res://icon.svg" id="4_gfgjs"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e66b0"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ngy02"]
+font = ExtResource("2_e66b0")
+font_size = 80
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sbiqi"]
+
+[sub_resource type="Sky" id="Sky_ngy02"]
+sky_material = SubResource("ProceduralSkyMaterial_sbiqi")
+
+[sub_resource type="Environment" id="Environment_e66b0"]
+background_mode = 2
+sky = SubResource("Sky_ngy02")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3r4tm"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfgjs"]
+size = Vector3(100, 0.001, 100)
+
+[sub_resource type="PrismMesh" id="PrismMesh_fpthd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bto60"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.014651676, 0.47069666, 0.47069666, 0.073521286, 0.35295743, 0.47060993, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.014651676, 0.47069666, -0.47069666, 0.5, -0.5, 0.5, -0.014651676, 0.47069666, 0.47069666, 0.014651676, 0.47069666, -0.47069666)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_16onh"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.014651676, 0.47069666, 0.47069666, 0.073521286, 0.35295743, 0.47060993, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.014651676, 0.47069666, -0.47069666, 0.5, -0.5, 0.5, -0.014651676, 0.47069666, 0.47069666, 0.014651676, 0.47069666, -0.47069666)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6hh85"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1f7y1"]
+points = PackedVector3Array(-0.21418296, -0.94802845, -0.4511285, 0.022731654, 0.9521457, 0.49888662, 0.17148845, 0.9519953, 0.46901843, -0.12593445, 0.9526843, -0.48329136, 0.49966258, -0.95367396, -0.0068888306, -0.3876465, -0.9379602, 0.31565303, -0.48329246, 0.9526857, -0.12593003, 0.37509736, 0.9401282, -0.3298157, 0.17148845, -0.9519953, 0.46901843, 0.14078338, -0.9454848, -0.47957912, 0.4690145, 0.9520113, 0.17149934, -0.3876465, 0.9379602, 0.31565303, -0.48329246, -0.9526857, -0.12593003, -0.18351147, -0.9430759, 0.46469846, 0.40741244, -0.9469937, 0.2889825, 0.37509736, -0.9401282, -0.3298157, -0.39515373, 0.9557608, -0.3055234, -0.479555, 0.9454372, 0.1408799, 0.46469817, 0.94309926, -0.18351227, 0.14078338, 0.9454848, -0.47957912, -0.24320284, 0.9459547, 0.43649116, -0.479555, -0.9454372, 0.1408799, 0.2889712, 0.9469877, 0.4074208, -0.39515373, -0.9557608, -0.3055234, -0.006990604, -0.953641, 0.4996576, 0.49966258, 0.95367396, -0.0068888306, -0.27194828, 0.943071, -0.41921657, 0.46469817, -0.94309926, -0.18351227, -0.12593445, -0.9526843, -0.48329136, 0.31564754, 0.93797344, -0.38765055, 0.4690145, -0.9520113, 0.17149934, 0.40741244, 0.9469937, 0.2889825)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_efcww"]
+points = PackedVector3Array(-0.21418296, -0.94802845, -0.4511285, 0.022731654, 0.9521457, 0.49888662, 0.17148845, 0.9519953, 0.46901843, -0.12593445, 0.9526843, -0.48329136, 0.49966258, -0.95367396, -0.0068888306, -0.3876465, -0.9379602, 0.31565303, -0.48329246, 0.9526857, -0.12593003, 0.37509736, 0.9401282, -0.3298157, 0.17148845, -0.9519953, 0.46901843, 0.14078338, -0.9454848, -0.47957912, 0.4690145, 0.9520113, 0.17149934, -0.3876465, 0.9379602, 0.31565303, -0.48329246, -0.9526857, -0.12593003, -0.18351147, -0.9430759, 0.46469846, 0.40741244, -0.9469937, 0.2889825, 0.37509736, -0.9401282, -0.3298157, -0.39515373, 0.9557608, -0.3055234, -0.479555, 0.9454372, 0.1408799, 0.46469817, 0.94309926, -0.18351227, 0.14078338, 0.9454848, -0.47957912, -0.24320284, 0.9459547, 0.43649116, -0.479555, -0.9454372, 0.1408799, 0.2889712, 0.9469877, 0.4074208, -0.39515373, -0.9557608, -0.3055234, -0.006990604, -0.953641, 0.4996576, 0.49966258, 0.95367396, -0.0068888306, -0.27194828, 0.943071, -0.41921657, 0.46469817, -0.94309926, -0.18351227, -0.12593445, -0.9526843, -0.48329136, 0.31564754, 0.93797344, -0.38765055, 0.4690145, -0.9520113, 0.17149934, 0.40741244, 0.9469937, 0.2889825)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nsdtn"]
+points = PackedVector3Array(-0.21418296, -0.94802845, -0.4511285, 0.022731654, 0.9521457, 0.49888662, 0.17148845, 0.9519953, 0.46901843, -0.12593445, 0.9526843, -0.48329136, 0.49966258, -0.95367396, -0.0068888306, -0.3876465, -0.9379602, 0.31565303, -0.48329246, 0.9526857, -0.12593003, 0.37509736, 0.9401282, -0.3298157, 0.17148845, -0.9519953, 0.46901843, 0.14078338, -0.9454848, -0.47957912, 0.4690145, 0.9520113, 0.17149934, -0.3876465, 0.9379602, 0.31565303, -0.48329246, -0.9526857, -0.12593003, -0.18351147, -0.9430759, 0.46469846, 0.40741244, -0.9469937, 0.2889825, 0.37509736, -0.9401282, -0.3298157, -0.39515373, 0.9557608, -0.3055234, -0.479555, 0.9454372, 0.1408799, 0.46469817, 0.94309926, -0.18351227, 0.14078338, 0.9454848, -0.47957912, -0.24320284, 0.9459547, 0.43649116, -0.479555, -0.9454372, 0.1408799, 0.2889712, 0.9469877, 0.4074208, -0.39515373, -0.9557608, -0.3055234, -0.006990604, -0.953641, 0.4996576, 0.49966258, 0.95367396, -0.0068888306, -0.27194828, 0.943071, -0.41921657, 0.46469817, -0.94309926, -0.18351227, -0.12593445, -0.9526843, -0.48329136, 0.31564754, 0.93797344, -0.38765055, 0.4690145, -0.9520113, 0.17149934, 0.40741244, 0.9469937, 0.2889825)
 
 [node name="MainMenu" type="Control" unique_id=841866184]
 layout_mode = 3
@@ -11,30 +56,174 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sbiqi")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=888246856]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("ViewportTexture_e66b0")
+
+[node name="TITLE" type="Label" parent="." unique_id=1882642485]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 437.0
+offset_bottom = 119.0
+text = "GOD BLESS YOU"
+label_settings = SubResource("LabelSettings_ngy02")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=74657547]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -33.0
-offset_right = 50.0
-offset_bottom = 33.0
-grow_horizontal = 2
+offset_left = 50.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 51.0
 grow_vertical = 2
 
 [node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1488551606]
 layout_mode = 2
+theme = ExtResource("3_3r4tm")
 text = "Play"
 
 [node name="OptionButton" type="Button" parent="VBoxContainer" unique_id=26261411]
 layout_mode = 2
+theme = ExtResource("3_3r4tm")
 text = "Option"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1215778087]
 layout_mode = 2
+theme = ExtResource("3_3r4tm")
 text = "Quit"
+
+[node name="BadgesContainer" type="HBoxContainer" parent="." unique_id=1813906805]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -564.0
+offset_top = -138.0
+offset_right = -40.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Badge1" type="TextureRect" parent="BadgesContainer" unique_id=244889542]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_gfgjs")
+
+[node name="Badge2" type="TextureRect" parent="BadgesContainer" unique_id=1637430899]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_gfgjs")
+
+[node name="Badge3" type="TextureRect" parent="BadgesContainer" unique_id=414032306]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_gfgjs")
+
+[node name="Badge4" type="TextureRect" parent="BadgesContainer" unique_id=188783557]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+texture = ExtResource("4_gfgjs")
+
+[node name="Reset" type="Button" parent="." unique_id=1169799172]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = -41.0
+offset_right = 214.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme = ExtResource("3_3r4tm")
+text = "Reset Achievements"
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=486835207]
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport" unique_id=1744029124]
+transform = Transform3D(-0.6524424, 0, -0.7578384, 0, 1, 0, 0.7578384, 0, -0.6524424, -20.592522, 4.481348, -22.828032)
+
+[node name="ShaderFilter" type="CanvasLayer" parent="SubViewport/Camera3D" unique_id=1462330212]
+
+[node name="Retro" type="ColorRect" parent="SubViewport/Camera3D/ShaderFilter" unique_id=1732136062]
+material = ExtResource("2_ngy02")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport" unique_id=516110153]
+transform = Transform3D(1, 0, 0, 0, -0.8094374, 0.5872062, 0, -0.5872062, -0.8094374, 0, 36.56978, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport" unique_id=483440008]
+environment = SubResource("Environment_e66b0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport" unique_id=1027125117]
+mesh = SubResource("PlaneMesh_3r4tm")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewport/MeshInstance3D" unique_id=1748415707]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/MeshInstance3D/StaticBody3D" unique_id=1788490366]
+shape = SubResource("BoxShape3D_gfgjs")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewport" unique_id=1387969348]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -15.563692, 0, 0)
+mesh = SubResource("PrismMesh_fpthd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewport/MeshInstance3D2" unique_id=1938300017]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/MeshInstance3D2/StaticBody3D" unique_id=20271761]
+shape = SubResource("ConvexPolygonShape3D_bto60")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewport" unique_id=1243865665]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 17.787954, 0, 0)
+mesh = SubResource("PrismMesh_fpthd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewport/MeshInstance3D3" unique_id=463262453]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/MeshInstance3D3/StaticBody3D" unique_id=296275731]
+shape = SubResource("ConvexPolygonShape3D_16onh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewport" unique_id=1278691276]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.40501595, -7.3070726, 22.449785)
+mesh = SubResource("CylinderMesh_6hh85")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewport/MeshInstance3D4" unique_id=1079917888]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/MeshInstance3D4/StaticBody3D" unique_id=1437832659]
+shape = SubResource("ConvexPolygonShape3D_1f7y1")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewport" unique_id=1382681307]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.40501595, -5.470189, 29.333307)
+mesh = SubResource("CylinderMesh_6hh85")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewport/MeshInstance3D5" unique_id=808807631]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/MeshInstance3D5/StaticBody3D" unique_id=338537558]
+shape = SubResource("ConvexPolygonShape3D_efcww")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewport" unique_id=872559003]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 6.6448383, -3.044382, 32.90589)
+mesh = SubResource("CylinderMesh_6hh85")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewport/MeshInstance3D6" unique_id=1473975249]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/MeshInstance3D6/StaticBody3D" unique_id=312843209]
+shape = SubResource("ConvexPolygonShape3D_nsdtn")
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_start_pressed"]

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://bh0tggtrikq4a"]
+
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="1_e7bfs"]
+
+[resource]
+default_font = ExtResource("1_e7bfs")
+default_font_size = 20
