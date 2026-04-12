@@ -1,0 +1,78 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dic5nwo8c8xei"]
+
+[sub_resource type="Shader" id="Shader_3sbty"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
+
+// The PS1 Classic Palette
+uniform vec3 palette[16] : source_color;
+
+// Settings
+uniform int dithering_mode : hint_range(0, 3) = 1; 
+uniform float spread : hint_range(0.0, 1.0) = 0.2;
+uniform float target_height : hint_range(120.0, 1080.0) = 240.0; // PS1 was usually 240p
+uniform bool use_downsampling = true;
+
+// Bayer 4x4 Matrix
+const float bayer_matrix[16] = float[](
+    0.0/16.0, 0.5, 0.125, 0.625,
+    0.75, 0.25, 0.875, 0.375,
+    0.1875, 0.6875, 0.0625, 0.5625,
+    0.9375, 0.4375, 0.8125, 0.3125
+);
+
+vec3 find_closest_color(vec3 color) {
+    vec3 closest = palette[0];
+    float shortest_dist = distance(color, palette[0]);
+    for (int i = 1; i < 16; i++) {
+        float dist = distance(color, palette[i]);
+        if (dist < shortest_dist) {
+            shortest_dist = dist;
+            closest = palette[i];
+        }
+    }
+    return closest;
+}
+
+void fragment() {
+    vec2 uv = SCREEN_UV;
+    
+    // --- Step 1: Downsampling (The 'Crunch') ---
+    if (use_downsampling) {
+        float ratio = SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y;
+        vec2 res = vec2(target_height * ratio, target_height);
+        uv = floor(uv * res) / res;
+    }
+
+    vec3 screen_col = texture(SCREEN_TEXTURE, uv).rgb;
+    
+    // --- Step 2: Dithering Calculations ---
+    float dither_shift = 0.0;
+    // We use actual screen coordinates for dither pattern stability
+    ivec2 dither_coord = ivec2(FRAGCOORD.xy); 
+    
+    if (dithering_mode == 1) { // Bayer
+        int x = dither_coord.x % 4;
+        int y = dither_coord.y % 4;
+        dither_shift = (bayer_matrix[x + y * 4] - 0.5) * spread;
+    } 
+    else if (dithering_mode >= 2) { // Floyd-Steinberg / Atkinson Approximation
+        // Using a high-frequency hash to simulate error diffusion noise
+        float noise = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+        dither_shift = (noise - 0.5) * spread;
+    }
+
+    // --- Step 3: Palette Mapping ---
+    vec3 final_col = find_closest_color(screen_col + dither_shift);
+    
+    COLOR = vec4(final_col, 1.0);
+}"
+
+[resource]
+shader = SubResource("Shader_3sbty")
+shader_parameter/palette = PackedColorArray(0.0627451, 0.09411765, 0.1254902, 1, 0.24485448, 0.0040693106, 0.30947685, 1, 0.81539047, 0.45172715, 0.96812433, 1, 0.7262166, 0.34979764, 0.9400663, 1, 0.6039216, 0.58431375, 0.68235296, 1, 0.76862746, 0.74509805, 0.8156863, 1, 0.3097889, 0.020906566, 0.11120463, 1, 0.9, 0.2, 0.4, 1, 0.982073, 0.480187, 0.5726931, 1, 0.81337047, 0.4833318, 0.011689996, 1, 0.87234396, 0.73365706, 0.383397, 1, 1, 0.8, 0.2, 1, 0.010495536, 0.075036444, 0.45618367, 1, 0.050980393, 0.2, 0.9019608, 1, 0.3666486, 0.55217123, 0.9912748, 1, 0, 0.47477478, 0.823885, 1)
+shader_parameter/dithering_mode = 1
+shader_parameter/spread = 0.2
+shader_parameter/target_height = 1024.00004294
+shader_parameter/use_downsampling = true

@@ -1,6 +1,7 @@
 extends RayCast3D
 
 @export var throw_force: float = 15.0
+@export var break_distance: float = 5.0 # Distance before the object drops
 
 @onready var play_char : PlayerCharacter = $"../../../../PlayerCharacter"
 @onready var hold_pos = %Camera/HoldPos
@@ -10,6 +11,12 @@ func _physics_process(delta):
 	input_management()
 
 	if held_object:
+		var distance = hold_pos.global_position.distance_to(held_object.global_position)
+		
+		if distance > break_distance:
+			release_object()
+			return
+		
 		var target_vel = (hold_pos.global_position - held_object.global_position) * 20.0
 		held_object.linear_velocity = target_vel
 		

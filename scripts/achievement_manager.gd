@@ -36,8 +36,14 @@ func load_achievements():
 	print(achievements)
 
 func reset_achievements():
-	config.clear()
-	load_achievements()
+	for id in achievements.keys():
+		achievements[id] = false
+	
+	save_achievements()
+	
+	config.clear() 
+	
+	print("Achievements have been reset!")
 
 func is_unlocked(id: String) -> bool:
 	return achievements[id]

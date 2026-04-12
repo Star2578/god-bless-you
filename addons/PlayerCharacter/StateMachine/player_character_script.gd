@@ -154,6 +154,8 @@ func input_actions_check():
 func _physics_process(_delta: float):
 	modify_physics_properties()
 
+	out_of_bound()
+
 	move_and_slide()
 	
 func modify_physics_properties():
@@ -192,3 +194,7 @@ func tween_model_height(state_model_height : float):
 	else:
 		model_tween.tween_interval(0.1)
 	model_tween.finished.connect(Callable(model_tween, "kill"))
+
+func out_of_bound():
+	if position.y < -100:
+		AchievementManager.unlock_achievement("trapped_in_the_void")

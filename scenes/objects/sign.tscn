@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c1slbuou4eaa0"]
+
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="1_010yf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_010yf"]
+albedo_color = Color(0.84801805, 0.3502627, 5.7756904e-07, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_010yf"]
+material = SubResource("StandardMaterial3D_010yf")
+size = Vector3(1.5, 0.5, 0.1)
+
+[node name="Sign" type="Label3D" unique_id=1132626794]
+modulate = Color(0.4679476, 0.1793544, 0.023670414, 1)
+text = "Principle Office"
+font = ExtResource("1_010yf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=559388971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.060879707)
+mesh = SubResource("BoxMesh_010yf")

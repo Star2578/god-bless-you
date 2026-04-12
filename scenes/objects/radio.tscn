@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cf2l2f7i8k4vq"]
 
 [ext_resource type="PackedScene" uid="uid://bj0jvtdilmq7" path="res://assets/school/radio.glb" id="1_4862f"]
+[ext_resource type="AudioStream" uid="uid://byodtfy5g10x8" path="res://sounds/bgm/Onirique.mp3" id="2_4tkjp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4tkjp"]
 size = Vector3(2.354723, 1.1680713, 0.717458)
@@ -14,3 +15,8 @@ size = Vector3(2.354723, 1.1680713, 0.717458)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="radio2/StaticBody3D" unique_id=535708188]
 transform = Transform3D(0.37087852, 0, 0, 0, 0.37087852, 0, 0, 0, 0.37087852, 0, 0, 0)
 shape = SubResource("BoxShape3D_4tkjp")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1453671175]
+stream = ExtResource("2_4tkjp")
+autoplay = true
+max_distance = 15.0

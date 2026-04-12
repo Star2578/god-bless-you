@@ -4,15 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="2_gqv1f"]
 [ext_resource type="PackedScene" uid="uid://qqg5d63765d4" path="res://scenes/objects/lamb.tscn" id="3_05s15"]
 [ext_resource type="PackedScene" uid="uid://b6rkp0g2j4822" path="res://scenes/objects/locker.tscn" id="3_f8ini"]
-[ext_resource type="PackedScene" uid="uid://dfgl5ru48mfpn" path="res://scenes/objects/student_table.tscn" id="4_lddun"]
-[ext_resource type="PackedScene" uid="uid://c3ujabav6is28" path="res://scenes/objects/student_chair.tscn" id="5_hrloj"]
-[ext_resource type="PackedScene" uid="uid://b1wfng0mkbmqi" path="res://scenes/objects/pencil_case.tscn" id="6_05s15"]
-[ext_resource type="PackedScene" uid="uid://cd2hxsnpk4vl6" path="res://scenes/objects/shelfwithwheels.tscn" id="7_w5r1w"]
-[ext_resource type="PackedScene" uid="uid://btlnnn3c6afn4" path="res://scenes/objects/tv_old.tscn" id="8_wo4i6"]
-[ext_resource type="PackedScene" uid="uid://ogtrq3s13xvj" path="res://scenes/objects/chalk_red.tscn" id="9_cbsmn"]
-[ext_resource type="PackedScene" uid="uid://bmdnmme6ep51r" path="res://scenes/objects/chalk_white.tscn" id="10_6wlou"]
-[ext_resource type="PackedScene" uid="uid://c85qyqqfqqbtu" path="res://scenes/objects/chalk_yellow.tscn" id="11_7y6vu"]
-[ext_resource type="PackedScene" uid="uid://blp8uykuikdxu" path="res://scenes/objects/shelf.tscn" id="12_hrloj"]
+[ext_resource type="PackedScene" uid="uid://c1slbuou4eaa0" path="res://scenes/objects/sign.tscn" id="3_s0u11"]
+[ext_resource type="PackedScene" uid="uid://dfgl5ru48mfpn" path="res://scenes/objects/classroom/student_table.tscn" id="4_lddun"]
+[ext_resource type="PackedScene" uid="uid://c3ujabav6is28" path="res://scenes/objects/classroom/student_chair.tscn" id="5_hrloj"]
+[ext_resource type="PackedScene" uid="uid://b1wfng0mkbmqi" path="res://scenes/objects/classroom/pencil_case.tscn" id="6_05s15"]
+[ext_resource type="PackedScene" uid="uid://cd2hxsnpk4vl6" path="res://scenes/objects/classroom/shelfwithwheels.tscn" id="7_w5r1w"]
+[ext_resource type="PackedScene" uid="uid://btlnnn3c6afn4" path="res://scenes/objects/classroom/tv_old.tscn" id="8_wo4i6"]
+[ext_resource type="PackedScene" uid="uid://ogtrq3s13xvj" path="res://scenes/objects/classroom/chalk_red.tscn" id="9_cbsmn"]
+[ext_resource type="PackedScene" uid="uid://bmdnmme6ep51r" path="res://scenes/objects/classroom/chalk_white.tscn" id="10_6wlou"]
+[ext_resource type="PackedScene" uid="uid://c85qyqqfqqbtu" path="res://scenes/objects/classroom/chalk_yellow.tscn" id="11_7y6vu"]
+[ext_resource type="PackedScene" uid="uid://blp8uykuikdxu" path="res://scenes/objects/classroom/shelf.tscn" id="12_hrloj"]
 [ext_resource type="PackedScene" uid="uid://byihfbiw2ynk4" path="res://assets/school/fake_sky.glb" id="14_w5r1w"]
 [ext_resource type="PackedScene" uid="uid://b3n58jvf73ygl" path="res://scenes/objects/lab/chem_cupboard.tscn" id="15_ciqhi"]
 [ext_resource type="PackedScene" uid="uid://c1qesvfc8x63h" path="res://scenes/objects/lab/chem_barrel.tscn" id="15_wo4i6"]
@@ -24,6 +25,21 @@
 [ext_resource type="PackedScene" uid="uid://bgu5w7etcg56f" path="res://scenes/objects/lab/chem_globe.tscn" id="21_f3p0x"]
 [ext_resource type="PackedScene" uid="uid://bfhpwidms60sj" path="res://scenes/objects/lab/chem_chair.tscn" id="22_5mv3u"]
 [ext_resource type="PackedScene" uid="uid://bnrcf41cxdfj5" path="res://scenes/objects/lab/chem_microscope.tscn" id="23_gj2xa"]
+[ext_resource type="PackedScene" uid="uid://nd6a5ktxhk0u" path="res://scenes/objects/bathroom/toilet.tscn" id="26_5mv3u"]
+[ext_resource type="PackedScene" uid="uid://c6dn6fwsoehyh" path="res://scenes/objects/bathroom/toilet_partition_wall.tscn" id="27_a6nic"]
+[ext_resource type="PackedScene" uid="uid://bvmfnocravq6k" path="res://scenes/objects/bathroom/toilet_partition.tscn" id="28_bx55m"]
+[ext_resource type="PackedScene" uid="uid://byeyntv1meht8" path="res://scenes/objects/bathroom/toilet_door.tscn" id="29_1jnxi"]
+[ext_resource type="PackedScene" uid="uid://beorg8c67p6sr" path="res://scenes/objects/bathroom/toilet_paper_handler.tscn" id="30_bx55m"]
+[ext_resource type="PackedScene" uid="uid://dod1t3hyesfu8" path="res://scenes/objects/bathroom/toilet_paper.tscn" id="31_1jnxi"]
+[ext_resource type="PackedScene" uid="uid://d2mwhlfrh53yh" path="res://scenes/objects/bathroom/toilet_sink_pipe.tscn" id="32_e1ctd"]
+[ext_resource type="PackedScene" uid="uid://cpye70d6xuh3o" path="res://scenes/objects/bathroom/toilet_sink.tscn" id="33_fen4j"]
+[ext_resource type="PackedScene" uid="uid://dpddw7ab3dyus" path="res://scenes/objects/bathroom/toilet_soap_dish.tscn" id="34_fen4j"]
+[ext_resource type="PackedScene" uid="uid://o8v1nq0c4dxp" path="res://scenes/objects/mirror.tscn" id="35_nr02g"]
+[ext_resource type="PackedScene" uid="uid://dgrxunslt1e8w" path="res://scenes/objects/bathroom/toilet_soap.tscn" id="36_jwwnp"]
+[ext_resource type="PackedScene" uid="uid://ddhgg8g4v5ew7" path="res://scenes/objects/bathroom/toilet_urinal_pipe.tscn" id="37_uf3nv"]
+[ext_resource type="PackedScene" uid="uid://fwjdqdxc3h06" path="res://scenes/objects/bathroom/toilet_urinal.tscn" id="38_dqyxw"]
+[ext_resource type="PackedScene" uid="uid://dpsryx3ktbt24" path="res://scenes/objects/bathroom/toilet_poop.tscn" id="39_07nv7"]
+[ext_resource type="PackedScene" uid="uid://cf2l2f7i8k4vq" path="res://scenes/objects/radio.tscn" id="40_dqyxw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8ini"]
 
@@ -34,6 +50,20 @@ sky_material = SubResource("ProceduralSkyMaterial_f8ini")
 background_mode = 2
 sky = SubResource("Sky_ux1ro")
 ambient_light_source = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0u11"]
+albedo_color = Color(0.15686275, 0, 0.8156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_shram"]
+material = SubResource("StandardMaterial3D_s0u11")
+size = Vector3(1.5, 0.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wub3"]
+albedo_color = Color(0.95686275, 0.27058825, 0.7058824, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4wub3"]
+material = SubResource("StandardMaterial3D_4wub3")
+size = Vector3(1.5, 0.5, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_05s15"]
 size = Vector3(50, 0.2, 80)
@@ -59,7 +89,7 @@ points = PackedVector3Array(-2.793651, -2.3337953, -0.5, 0.09484663, 2.5952382, 
 environment = SubResource("Environment_bu5ox")
 
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("2_gqv1f")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 14, 1, -6)
+transform = Transform3D(0.59999996, 0, -3.5527137e-15, 0, 0.59999996, 0, 3.5527137e-15, 0, 0.59999996, 15.790716, 0.99999905, -5.824247)
 walk_speed = 5.0
 walk_accel = 6.0
 walk_deccel = 5.0
@@ -71,6 +101,35 @@ run_deccel = 5.0
 transform = Transform3D(1, 0, 0, 0, 0.5478261, 0.83659226, 0, -0.83659226, 0.5478261, 0, 11.060055, 0)
 
 [node name="class_room_build" parent="." unique_id=620539965 instance=ExtResource("2_f8ini")]
+
+[node name="Signs" type="Node3D" parent="." unique_id=21337563]
+
+[node name="Sign" parent="Signs" unique_id=1132626794 instance=ExtResource("3_s0u11")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.100274, 1.8890221, 23.014357)
+
+[node name="Sign2" parent="Signs" unique_id=968507643 instance=ExtResource("3_s0u11")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.886647, 1.8890221, 5.007026)
+text = "Cafeteria"
+
+[node name="Sign3" parent="Signs" unique_id=376139816 instance=ExtResource("3_s0u11")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.886647, 1.8890221, 14.994804)
+text = "Cafeteria"
+
+[node name="Sign4" parent="Signs" unique_id=209609460 instance=ExtResource("3_s0u11")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.886647, 1.8890221, -18.952936)
+modulate = Color(0.1585531, 9.62615e-07, 0.8155404, 1)
+text = "Bathroom"
+
+[node name="MeshInstance3D" parent="Signs/Sign4" index="0" unique_id=559388971]
+mesh = SubResource("BoxMesh_shram")
+
+[node name="Sign5" parent="Signs" unique_id=147767998 instance=ExtResource("3_s0u11")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -8.886647, 1.8890221, -28.981567)
+modulate = Color(0.51910657, 0.03374074, 0.24673754, 1)
+text = "Bathroom"
+
+[node name="MeshInstance3D" parent="Signs/Sign5" index="0" unique_id=559388971]
+mesh = SubResource("BoxMesh_4wub3")
 
 [node name="Lights" type="Node3D" parent="." unique_id=1287330046]
 
@@ -178,6 +237,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.7
 
 [node name="Lamb19" parent="Lights" unique_id=1329905788 instance=ExtResource("3_05s15")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.2435894, 3.0287185, -6.052332)
+
+[node name="Lamb33" parent="Lights" unique_id=1785370214 instance=ExtResource("3_05s15")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.9785385, 3.0287185, -18.860865)
+
+[node name="Lamb34" parent="Lights" unique_id=2089932393 instance=ExtResource("3_05s15")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.9785385, 3.0287185, -21.984507)
+
+[node name="Lamb35" parent="Lights" unique_id=927836824 instance=ExtResource("3_05s15")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.9785385, 3.0287185, -27.674482)
+
+[node name="Lamb36" parent="Lights" unique_id=2096605867 instance=ExtResource("3_05s15")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.9785385, 3.0287185, -30.798124)
 
 [node name="Lockers" type="Node3D" parent="." unique_id=518780432]
 
@@ -1078,7 +1149,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5155, 0.6809, -0.29787764)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.436865, 0.6809, 2.515436)
 
 [node name="chem_barrel18" parent="." unique_id=619802310 instance=ExtResource("15_wo4i6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.436865, 0.6809, 2.515436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.436865, 0.6809, -10.383892)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1367165780]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.402962, 0, 19.412868)
@@ -1097,3 +1168,414 @@ mesh = SubResource("PrismMesh_4wub3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=1064517593]
 shape = SubResource("ConvexPolygonShape3D_gj2xa")
+
+[node name="toilet" parent="." unique_id=831495910 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -24.159447)
+
+[node name="toilet_partition_wall" parent="." unique_id=294310348 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -23.453701)
+
+[node name="toilet_partition" parent="." unique_id=1509313900 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -23.484665)
+
+[node name="toilet_door" parent="." unique_id=135406307 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -23.68321)
+
+[node name="toilet_paper_handler" parent="." unique_id=1336268838 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -23.520596)
+
+[node name="toilet_paper" parent="." unique_id=1268905624 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -23.614826)
+
+[node name="toilet2" parent="." unique_id=510831074 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -22.598928)
+
+[node name="toilet_partition_wall2" parent="." unique_id=410915721 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -21.893183)
+
+[node name="toilet_partition2" parent="." unique_id=49747947 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -21.924147)
+
+[node name="toilet_door2" parent="." unique_id=1842500574 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -22.122692)
+
+[node name="toilet_paper_handler2" parent="." unique_id=432110927 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -21.960077)
+
+[node name="toilet_paper2" parent="." unique_id=1858572601 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -22.054308)
+
+[node name="toilet3" parent="." unique_id=1260910728 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -21.020988)
+
+[node name="toilet_partition_wall3" parent="." unique_id=2117826228 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -20.315243)
+
+[node name="toilet_partition3" parent="." unique_id=1868367551 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -20.346207)
+
+[node name="toilet_door3" parent="." unique_id=225555220 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -20.544752)
+
+[node name="toilet_paper_handler3" parent="." unique_id=1913497343 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -20.382137)
+
+[node name="toilet_paper3" parent="." unique_id=578633008 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -20.476368)
+
+[node name="toilet4" parent="." unique_id=1445352437 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -19.46409)
+
+[node name="toilet_partition_wall4" parent="." unique_id=1369308003 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -18.758345)
+
+[node name="toilet_partition4" parent="." unique_id=766689681 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -18.789309)
+
+[node name="toilet_door4" parent="." unique_id=221742965 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -18.987854)
+
+[node name="toilet_paper_handler4" parent="." unique_id=1442418813 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -18.82524)
+
+[node name="toilet_paper4" parent="." unique_id=112780990 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -18.91947)
+
+[node name="toilet5" parent="." unique_id=725410296 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -17.90583)
+
+[node name="toilet_partition_wall5" parent="." unique_id=1357123931 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -17.200085)
+
+[node name="toilet_partition5" parent="." unique_id=918693818 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -17.231049)
+
+[node name="toilet_door5" parent="." unique_id=1887759782 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -17.429594)
+
+[node name="toilet_paper_handler5" parent="." unique_id=297564683 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -17.26698)
+
+[node name="toilet_paper5" parent="." unique_id=1630430620 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -17.36121)
+
+[node name="toilet_sink_pipe" parent="." unique_id=2077439090 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -23.717833)
+
+[node name="toilet_sink_pipe2" parent="." unique_id=996866654 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -22.721903)
+
+[node name="toilet_sink" parent="." unique_id=1546786912 instance=ExtResource("33_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.445434, 0.791782, -23.224203)
+
+[node name="toilet_sink_pipe3" parent="." unique_id=1498565627 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -21.723606)
+
+[node name="toilet_sink_pipe4" parent="." unique_id=1483608295 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -20.727676)
+
+[node name="toilet_sink2" parent="." unique_id=1177647560 instance=ExtResource("33_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.445434, 0.791782, -21.229977)
+
+[node name="toilet_soap_dish" parent="." unique_id=1270795236 instance=ExtResource("34_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.140368, 0.92192703, -21.22913)
+
+[node name="toilet_soap_dish2" parent="." unique_id=392348789 instance=ExtResource("34_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.140368, 0.92192703, -23.224426)
+
+[node name="Mirror" parent="." unique_id=2000402518 instance=ExtResource("35_nr02g")]
+transform = Transform3D(-8.787614e-08, 0, -0.99999994, 0, 1, 0, 2.0103717, 0, -4.3711385e-08, -9.052658, 1.8946062, -22.214573)
+
+[node name="toilet_soap" parent="." unique_id=257650250 instance=ExtResource("36_jwwnp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.239881, 0.9559107, -23.226137)
+
+[node name="toilet_soap2" parent="." unique_id=714416336 instance=ExtResource("36_jwwnp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.237688, 0.9559107, -21.229984)
+
+[node name="toilet_urinal_pipe" parent="." unique_id=9147525 instance=ExtResource("37_uf3nv")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -9.946845, 1.5954976, -16.56923)
+
+[node name="toilet_urinal" parent="." unique_id=945196047 instance=ExtResource("38_dqyxw")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -9.945329, 0.9103117, -16.642746)
+
+[node name="toilet_urinal_pipe2" parent="." unique_id=1489315022 instance=ExtResource("37_uf3nv")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -11.170218, 1.5954976, -16.56923)
+
+[node name="toilet_urinal2" parent="." unique_id=1015861029 instance=ExtResource("38_dqyxw")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -11.168702, 0.9103117, -16.642746)
+
+[node name="toilet_urinal_pipe3" parent="." unique_id=407211712 instance=ExtResource("37_uf3nv")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -12.317681, 1.5954976, -16.56923)
+
+[node name="toilet_urinal3" parent="." unique_id=8700877 instance=ExtResource("38_dqyxw")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -12.316165, 0.9103117, -16.642746)
+
+[node name="toilet_urinal_pipe4" parent="." unique_id=1046430146 instance=ExtResource("37_uf3nv")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -13.592955, 1.5954976, -16.56923)
+
+[node name="toilet_urinal4" parent="." unique_id=1686235030 instance=ExtResource("38_dqyxw")]
+transform = Transform3D(0.5580367, 0, 0, 0, 0.5580367, 0, 0, 0, 0.5580367, -13.591438, 0.9103117, -16.642746)
+
+[node name="toilet6" parent="." unique_id=945765972 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -32.877098)
+
+[node name="toilet_partition_wall6" parent="." unique_id=1523407800 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -32.17135)
+
+[node name="toilet_partition6" parent="." unique_id=2008161657 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -32.202316)
+
+[node name="toilet_door6" parent="." unique_id=258055112 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -32.40086)
+
+[node name="toilet_paper_handler6" parent="." unique_id=730023268 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -32.238243)
+
+[node name="toilet_paper6" parent="." unique_id=31302649 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -32.332474)
+
+[node name="toilet7" parent="." unique_id=1814031531 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -31.316578)
+
+[node name="toilet_partition_wall7" parent="." unique_id=2076801466 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -30.610832)
+
+[node name="toilet_partition7" parent="." unique_id=206926154 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -30.641796)
+
+[node name="toilet_door7" parent="." unique_id=10985752 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -30.840342)
+
+[node name="toilet_paper_handler7" parent="." unique_id=1849456761 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -30.677727)
+
+[node name="toilet_paper7" parent="." unique_id=1703809013 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -30.771957)
+
+[node name="toilet8" parent="." unique_id=365074834 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -29.738638)
+
+[node name="toilet_partition_wall8" parent="." unique_id=2075536728 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -29.032892)
+
+[node name="toilet_partition8" parent="." unique_id=9859710 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -29.063856)
+
+[node name="toilet_door8" parent="." unique_id=1504254910 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -29.262402)
+
+[node name="toilet_paper_handler8" parent="." unique_id=817256881 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -29.099787)
+
+[node name="toilet_paper8" parent="." unique_id=1640300232 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -29.194017)
+
+[node name="toilet9" parent="." unique_id=2118668364 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -28.18174)
+
+[node name="toilet_partition_wall9" parent="." unique_id=58475217 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -27.475994)
+
+[node name="toilet_partition9" parent="." unique_id=150726313 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -27.506958)
+
+[node name="toilet_door9" parent="." unique_id=1405574916 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -27.705503)
+
+[node name="toilet_paper_handler9" parent="." unique_id=1965716724 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -27.542889)
+
+[node name="toilet_paper9" parent="." unique_id=28840630 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -27.63712)
+
+[node name="toilet10" parent="." unique_id=1561380219 instance=ExtResource("26_5mv3u")]
+transform = Transform3D(-2.8849517e-08, 0, 0.66, 0, 0.66, 0, -0.66, 0, -2.8849517e-08, -16.207047, 0.42738825, -26.62348)
+
+[node name="toilet_partition_wall10" parent="." unique_id=1882908369 instance=ExtResource("27_a6nic")]
+transform = Transform3D(-3.365777e-08, 0, -1.1087999, 0, 0.77, 0, 0.77, 0, -4.8467186e-08, -15.523261, 1.3676999, -25.917734)
+
+[node name="toilet_partition10" parent="." unique_id=147706591 instance=ExtResource("28_bx55m")]
+transform = Transform3D(-3.059797e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.059797e-08, -14.198497, 1.3190411, -25.948698)
+
+[node name="toilet_door10" parent="." unique_id=2048125104 instance=ExtResource("29_1jnxi")]
+transform = Transform3D(-3.059797e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.059797e-08, -14.205426, 1.3334799, -26.147243)
+
+[node name="toilet_paper_handler10" parent="." unique_id=1810383584 instance=ExtResource("30_bx55m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.557421, 0.84825426, -25.984629)
+
+[node name="toilet_paper10" parent="." unique_id=1715220861 instance=ExtResource("31_1jnxi")]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -15.668824, 0.8621814, -26.07886)
+
+[node name="toilet_sink_pipe5" parent="." unique_id=1979823226 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -33.01593)
+
+[node name="toilet_sink_pipe6" parent="." unique_id=1295314269 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -32.020004)
+
+[node name="toilet_sink3" parent="." unique_id=1189961291 instance=ExtResource("33_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.445434, 0.791782, -32.5223)
+
+[node name="toilet_sink_pipe7" parent="." unique_id=2064013305 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -31.021706)
+
+[node name="toilet_sink_pipe8" parent="." unique_id=621567168 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -30.025776)
+
+[node name="toilet_sink4" parent="." unique_id=42401607 instance=ExtResource("33_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9.445434, 0.791782, -30.528076)
+
+[node name="toilet_soap_dish3" parent="." unique_id=1218241919 instance=ExtResource("34_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.140368, 0.92192703, -30.52723)
+
+[node name="toilet_soap_dish4" parent="." unique_id=630903963 instance=ExtResource("34_fen4j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.140368, 0.92192703, -32.52253)
+
+[node name="Mirror2" parent="." unique_id=144955153 instance=ExtResource("35_nr02g")]
+transform = Transform3D(-8.787614e-08, 0, -0.99999994, 0, 1, 0, 2.0103717, 0, -4.3711385e-08, -9.052658, 1.8946062, -31.512672)
+
+[node name="toilet_soap3" parent="." unique_id=2072072094 instance=ExtResource("36_jwwnp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.239881, 0.9559107, -32.52424)
+
+[node name="toilet_soap4" parent="." unique_id=1408624699 instance=ExtResource("36_jwwnp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.237688, 0.9559107, -30.528084)
+
+[node name="toilet_sink_pipe9" parent="." unique_id=33486431 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -33.01593)
+
+[node name="toilet_sink_pipe10" parent="." unique_id=1412989659 instance=ExtResource("32_e1ctd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -32.020004)
+
+[node name="Mirror3" parent="." unique_id=318724861 instance=ExtResource("35_nr02g")]
+transform = Transform3D(-8.787614e-08, 0, -0.99999994, 0, 1, 0, 2.0103717, 0, -4.3711385e-08, -9.052658, 1.8946062, -31.512672)
+
+[node name="toilet_soap5" parent="." unique_id=185223039 instance=ExtResource("36_jwwnp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.239881, 0.9559107, -32.52424)
+
+[node name="toilet_soap6" parent="." unique_id=1675392298 instance=ExtResource("36_jwwnp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.237688, 0.9559107, -30.528084)
+
+[node name="toilet_poop" parent="." unique_id=416521994 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -11.173933, 0.76363546, -16.716978)
+
+[node name="toilet_poop2" parent="." unique_id=707366078 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -12.322772, 0.76363546, -16.716978)
+
+[node name="toilet_poop3" parent="." unique_id=213050089 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -13.588787, 0.76363546, -16.716978)
+
+[node name="toilet_poop4" parent="." unique_id=142171546 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -10.300403, 0.029700577, -17.56784)
+
+[node name="toilet_poop5" parent="." unique_id=923788167 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -11.966122, 0.029700339, -22.628157)
+
+[node name="toilet_poop7" parent="." unique_id=1628575359 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -10.688574, 0.029700339, -21.069126)
+
+[node name="toilet_poop8" parent="." unique_id=734349666 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -9.510063, 0.029700339, -19.265957)
+
+[node name="toilet_poop6" parent="." unique_id=1685772905 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -13.818954, 0.029700577, -24.327324)
+
+[node name="toilet_poop9" parent="." unique_id=1836719087 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -14.992202, 0.029700577, -24.280863)
+
+[node name="toilet_poop10" parent="." unique_id=558943925 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.634204, 0.029700577, -23.906044)
+
+[node name="toilet_poop11" parent="." unique_id=953344000 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.871191, 0.029700577, -24.598392)
+
+[node name="toilet_poop12" parent="." unique_id=16314348 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.600311, 0.029700577, -24.350739)
+
+[node name="toilet_poop13" parent="." unique_id=1472306087 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.090256, 0.029700577, -23.682467)
+
+[node name="toilet_poop14" parent="." unique_id=1261912613 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.33709, 0.029700577, -24.581787)
+
+[node name="toilet_poop15" parent="." unique_id=1283969655 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.291105, 0.029700577, -23.805197)
+
+[node name="toilet_poop16" parent="." unique_id=919478376 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.267351, 1.1900733, -24.652008)
+
+[node name="toilet_poop17" parent="." unique_id=1840170081 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.468835, 1.1900733, -24.455524)
+
+[node name="toilet_poop18" parent="." unique_id=114300482 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.707123, 1.1900733, -24.163923)
+
+[node name="toilet_poop19" parent="." unique_id=533448646 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.932731, 1.1900733, -24.50664)
+
+[node name="toilet_poop20" parent="." unique_id=1231068146 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.173855, 0.65788186, -24.12773)
+
+[node name="toilet_poop21" parent="." unique_id=871864407 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.345984, 0.65788186, -24.45582)
+
+[node name="toilet_poop22" parent="." unique_id=1566495891 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.270874, 0.65788186, -23.801891)
+
+[node name="toilet_poop24" parent="." unique_id=1224625460 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.910311, 0.65788186, -23.896103)
+
+[node name="toilet_poop25" parent="." unique_id=1855227310 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.205475, 0.65788186, -24.672007)
+
+[node name="toilet_poop26" parent="." unique_id=1861726947 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.506552, 0.65788186, -24.592867)
+
+[node name="toilet_poop27" parent="." unique_id=919067089 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.506552, 1.0495389, -24.157547)
+
+[node name="toilet_poop28" parent="." unique_id=1470611957 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.141078, 0.9351325, -24.296371)
+
+[node name="toilet_poop29" parent="." unique_id=1222926561 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.697024, 0.9351325, -24.584454)
+
+[node name="toilet_poop30" parent="." unique_id=407160251 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.696032, 0.9351325, -23.900427)
+
+[node name="toilet_poop31" parent="." unique_id=1496372261 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.927344, 0.9351325, -24.364487)
+
+[node name="toilet_poop32" parent="." unique_id=83362009 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -16.484463, 0.9351325, -23.794872)
+
+[node name="toilet_poop23" parent="." unique_id=2136746057 instance=ExtResource("39_07nv7")]
+transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -15.363213, 0.65788186, -24.006336)
+
+[node name="Radio" parent="." unique_id=1558749573 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.368201, 2.703727, 1.0673665)
+
+[node name="Radio2" parent="." unique_id=1882467502 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.361786, 2.703727, 1.0673665)
+
+[node name="Radio3" parent="." unique_id=1629475793 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.368201, 2.703727, -13.337559)
+
+[node name="Radio4" parent="." unique_id=1375312775 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.361786, 2.703727, -13.337559)
+
+[node name="Radio5" parent="." unique_id=569104861 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 28.884089, 2.665189, -6.670673)
+
+[node name="Radio7" parent="." unique_id=875362103 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -18.636106, 2.6651886, 9.550396)
+
+[node name="Radio8" parent="." unique_id=857575897 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -5.1134734, 2.6651886, -25.01587)
+
+[node name="Radio9" parent="." unique_id=1095042987 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -5.1134734, 2.6651886, -3.294836)
+
+[node name="Radio10" parent="." unique_id=1301146846 instance=ExtResource("40_dqyxw")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, -5.1134734, 2.6651886, 11.395767)
+
+[editable path="Signs/Sign4"]
+[editable path="Signs/Sign5"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://o8v1nq0c4dxp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yci5l"]
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w0b0j"]
+material = SubResource("StandardMaterial3D_yci5l")
+
+[node name="Mirror" type="Node3D" unique_id=2000402518]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=969974332]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_w0b0j")
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="MeshInstance3D" unique_id=585074514]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08489311, -3.7107957e-09)
+update_mode = 1
+box_projection = true
+enable_shadows = true
+cull_mask = 1048573
+reflection_mask = 1048573
