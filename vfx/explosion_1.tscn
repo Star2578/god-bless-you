@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bbu085evnh4j"]
+
+[ext_resource type="Script" uid="uid://k3akerkngs1a" path="res://vfx/vfx.gd" id="1_0dyh2"]
+[ext_resource type="Material" uid="uid://cxhaa6i7bto07" path="res://explosives/ExplosionMaterial.tres" id="1_14awp"]
+[ext_resource type="AudioStream" uid="uid://cw1bxxgcnbfip" path="res://sounds/sfx/soundreality-explosion-fx-343683.mp3" id="3_clpjj"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rva4e"]
+angle_max = 1.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+angular_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -1.0
+linear_accel_max = -1.0
+scale_min = 5.0
+scale_max = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_16uck"]
+
+[node name="vfx" type="Node3D" unique_id=77447623 node_paths=PackedStringArray("particle") groups=["Particle"]]
+script = ExtResource("1_0dyh2")
+particle = NodePath("Explosion1")
+
+[node name="Explosion1" type="GPUParticles3D" parent="." unique_id=134072330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00112057, -0.00427759, -0.00190479)
+material_override = ExtResource("1_14awp")
+emitting = false
+amount = 40
+lifetime = 2.13
+one_shot = true
+explosiveness = 0.91
+randomness = 0.84
+fixed_fps = 60
+visibility_aabb = AABB(-4, -4, -4.79199, 8, 8, 8)
+process_material = SubResource("ParticleProcessMaterial_rva4e")
+draw_pass_1 = SubResource("QuadMesh_16uck")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=403333833]
+stream = ExtResource("3_clpjj")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="finished" from="Explosion1" to="." method="_on_particle_finished"]
+[connection signal="tree_entered" from="Explosion1" to="." method="_on_particle_tree_entered"]

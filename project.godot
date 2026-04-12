@@ -15,9 +15,17 @@ run/main_scene="uid://dxek5mihto16h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ccoib4q0g35od"
+
 [autoload]
 
 GameController="*uid://b5c6gc41nw3ym"
+
+[global_group]
+
+Particle=""
 
 [physics]
 

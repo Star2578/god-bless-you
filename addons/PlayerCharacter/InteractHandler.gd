@@ -10,8 +10,6 @@ func _physics_process(delta):
 	input_management()
 
 	if held_object:
-		# Move the object toward the HoldPos using velocity
-		# This gives it that "Garry's Mod" weight/delay
 		var target_vel = (hold_pos.global_position - held_object.global_position) * 20.0
 		held_object.linear_velocity = target_vel
 		
@@ -51,7 +49,7 @@ func pick_up(body: RigidBody3D):
 	held_object = body
 	held_object.gravity_scale = 0.0 # Make it float
 	# We use layers to stop it from colliding with the player while held
-	held_object.set_collision_layer_value(1, false)
+	# held_object.set_collision_layer_value(1, false)
 
 func throw():
 	held_object.gravity_scale = 1.0
@@ -60,6 +58,8 @@ func throw():
 	var throw_dir = -play_char.cam.global_basis.z
 	
 	held_object.apply_central_impulse(throw_dir * throw_force * held_object.mass)
+	if held_object is Explosive:
+		held_object.was_thrown = true
 	
 	held_object = null
 	print("Object thrown!")

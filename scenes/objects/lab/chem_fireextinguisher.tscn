@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://eu4pjah4xiu0"]
+
+[ext_resource type="PackedScene" uid="uid://dihham1ly5q15" path="res://assets/lab/CHEMISTRYfireextinguisher.glb" id="1_k0oxf"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_gq322"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uvvwu"]
+radius = 0.10678315
+height = 0.63302225
+
+[node name="chem_fireextinguisher" type="RigidBody3D" unique_id=639994124]
+mass = 2.0
+
+[node name="CHEMISTRYfireextinguisher2" parent="." unique_id=1224545770 instance=ExtResource("1_k0oxf")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1756902147]
+collision_layer = 2
+script = ExtResource("2_gq322")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1434944261]
+transform = Transform3D(1.2372831, 0, 0, 0, 1.2372831, 0, 0, 0, 1.2372831, 0.023041908, 0.3473057, 0)
+shape = SubResource("CapsuleShape3D_uvvwu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1975316078]
+transform = Transform3D(1.2372831, 0, 0, 0, 1.2372831, 0, 0, 0, 1.2372831, 0.023041908, 0.3473057, 0)
+shape = SubResource("CapsuleShape3D_uvvwu")

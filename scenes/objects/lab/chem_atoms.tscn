@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cm7l8e4hmrxij"]
+
+[ext_resource type="PackedScene" uid="uid://n4g80icrifw7" path="res://assets/lab/CHESMISTRYatoms.glb" id="1_riylb"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_3bqwu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3bqwu"]
+points = PackedVector3Array(70.18179, 8.213464, -80.77577, 70.18179, 11.510804, -80.77577, -13.856346, -1.6743631, 4.9383087, 35.59182, -6.6203747, -54.397045, 80.07349, 4.9140253, -11.5567875, 2.6332588, 4.9140253, -26.390625, 24.05839, -3.3230333, -64.28906, 81.72555, 14.8081455, -31.340832, 83.36728, 4.9140253, -72.52823, 2.6332588, -3.3230333, 3.27705, -2.3125877, 3.2737453, 3.27705, 65.24626, 14.8081455, -62.6362, 85.01933, 13.159474, -9.912312, 86.6714, 11.510804, -74.18109, 91.62757, 8.213464, -13.209652, 70.18179, -0.02569294, -44.505024, 58.64836, -0.02569294, -18.151468, 9.220842, -3.3230333, -44.505024, 27.35218, -4.9717035, -64.28906, -13.856346, 1.6229775, -1.6647644, 22.406332, -1.6743631, -62.6362, 73.48591, 8.213464, -6.614971, 85.01933, 14.8081455, -37.91873, 35.59182, -6.6203747, -49.45523, 29.004238, -6.6203747, -49.45523, 78.42143, 13.159474, -9.912312, 65.24626, 14.8081455, -57.694386, 86.6714, 8.213464, -75.82556, 30.645973, -0.02569294, -0.020290375, 91.62757, 9.862134, -18.151468, 9.220842, -0.02569294, -44.505024, -7.258438, 1.6229775, 4.9383087)
+
+[node name="chem_atoms" type="RigidBody3D" unique_id=674087223]
+mass = 0.2
+
+[node name="CHESMISTRYatoms2" parent="." unique_id=1312922042 instance=ExtResource("1_riylb")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=30575364]
+script = ExtResource("2_3bqwu")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2051260667]
+transform = Transform3D(0.009163595, 0, 0, 0, 0.03651756, 0, 0, 0, 0.009163595, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_3bqwu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=770360773]
+transform = Transform3D(0.009163595, 0, 0, 0, 0.03651756, 0, 0, 0, 0.009163595, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_3bqwu")

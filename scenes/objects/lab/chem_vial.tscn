@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://d3h70qg714sg0"]
+
+[ext_resource type="PackedScene" uid="uid://emdsknqu43ko" path="res://assets/lab/CHEMISTRYvial.glb" id="1_8nf5a"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_svdsu"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rqj1c"]
+height = 0.32572722
+radius = 0.021456007
+
+[node name="chem_vial" type="RigidBody3D" unique_id=2096106057]
+mass = 0.2
+
+[node name="CHEMISTRYvial2" parent="." unique_id=395910848 instance=ExtResource("1_8nf5a")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1366572661]
+collision_layer = 2
+script = ExtResource("2_svdsu")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1051109754]
+transform = Transform3D(0.57963127, 0, 0, 0, 0.57963127, 0, 0, 0, 0.57963127, 4.0270848e-07, -0.0011071913, -1.0796474e-09)
+shape = SubResource("CylinderShape3D_rqj1c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1029396632]
+transform = Transform3D(0.57963127, 0, 0, 0, 0.57963127, 0, 0, 0, 0.57963127, 4.0270848e-07, -0.0011071913, -1.0796474e-09)
+shape = SubResource("CylinderShape3D_rqj1c")

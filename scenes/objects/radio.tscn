@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cf2l2f7i8k4vq"]
+
+[ext_resource type="PackedScene" uid="uid://bj0jvtdilmq7" path="res://assets/school/radio.glb" id="1_4862f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4tkjp"]
+size = Vector3(2.354723, 1.1680713, 0.717458)
+
+[node name="Radio" type="Node3D" unique_id=1558749573]
+
+[node name="radio2" parent="." unique_id=1473812015 instance=ExtResource("1_4862f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="radio2" unique_id=553865790]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="radio2/StaticBody3D" unique_id=535708188]
+transform = Transform3D(0.37087852, 0, 0, 0, 0.37087852, 0, 0, 0, 0.37087852, 0, 0, 0)
+shape = SubResource("BoxShape3D_4tkjp")

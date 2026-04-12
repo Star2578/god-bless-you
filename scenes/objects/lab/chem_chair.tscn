@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bfhpwidms60sj"]
+
+[ext_resource type="PackedScene" uid="uid://qidxuqg37gvg" path="res://assets/lab/CHEMISTRYchairwithwheels.glb" id="1_4suxk"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_1dsn5"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4suxk"]
+height = 0.59249914
+radius = 0.14576936
+
+[node name="chem_char" type="RigidBody3D" unique_id=721997401]
+
+[node name="chem_chair" type="Node3D" parent="." unique_id=891450560]
+
+[node name="CHEMISTRYchairwithwheels2" parent="chem_chair" unique_id=974975453 instance=ExtResource("1_4suxk")]
+
+[node name="Area3D" type="Area3D" parent="chem_chair" unique_id=1571121971]
+collision_layer = 2
+script = ExtResource("2_1dsn5")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="chem_chair/Area3D" unique_id=801316777]
+transform = Transform3D(1.2773439, 0, 0, 0, 1.2773439, 0, 0, 0, 1.2773439, 0, -0.34071293, 0)
+shape = SubResource("CylinderShape3D_4suxk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=824033671]
+transform = Transform3D(1.2773439, 0, 0, 0, 1.2773439, 0, 0, 0, 1.2773439, 0, -0.34071293, 0)
+shape = SubResource("CylinderShape3D_4suxk")
