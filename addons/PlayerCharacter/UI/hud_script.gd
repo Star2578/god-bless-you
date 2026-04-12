@@ -21,11 +21,17 @@ class_name HUD
 @onready var current_fov_label_text: Label = %CurrentFOVLabelText
 @onready var camera_bob_vertical_offset_label_text: Label = %CameraBobVerticalOffsetLabelText
 
+@onready var crosshair = $Crosshair
+
+func _ready() -> void:
+	GameController.state_changed.connect(_on_hud_event)
+
 func _process(_delta : float) -> void:
 	display_current_FPS()
-	
+
 	display_properties()
-	
+
+
 func display_properties() -> void:
 	#player character properties
 	current_state_label_text.set_text(str(play_char.state_machine.curr_state_name))
@@ -38,19 +44,18 @@ func display_properties() -> void:
 	coyote_time_label_text.set_text(str(round_to_3_decimals(play_char.coyote_jump_cooldown)))
 	nb_jumps_in_air_allowed_label_text.set_text(str(play_char.nb_jumps_in_air_allowed))
 	jump_cooldown_label_text.set_text(str(round_to_3_decimals(play_char.jump_cooldown)))
-	
+
 	#camera properties
 	camera_rotation_label_text.set_text(str("[ ", round_to_3_decimals(play_char.cam.rotation.x)," ", round_to_3_decimals(play_char.cam.rotation.y)," ", round_to_3_decimals(play_char.cam.rotation.z), " ]"))
 	current_fov_label_text.set_text(str(play_char.cam.fov))
 	camera_bob_vertical_offset_label_text.set_text(str(round_to_3_decimals(play_char.cam.v_offset)))
-	
+
 func display_current_FPS() -> void:
 	frames_per_second_label_text.set_text(str(Engine.get_frames_per_second()))
-	
+
 func round_to_3_decimals(value: float) -> float:
 	return round(value * 1000.0) / 1000.0
-	
-	
-	
-	
-	
+
+
+func _on_hud_event(_from: GameController.GameState, to: GameController.GameState):
+	crosshair.visible = not (to == GameController.GameState.OPTION or to == GameController.GameState.INGAME_OPTION)

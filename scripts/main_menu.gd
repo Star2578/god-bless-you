@@ -5,6 +5,8 @@ extends Control
 @onready var badge_3 = %Badge3
 @onready var badge_4 = %Badge4
 
+@onready var option_menu_scene : Node = $OptionMenu
+
 func _ready():
 	update_badges()
 
@@ -16,10 +18,10 @@ func update_badges():
 
 func _on_start_pressed():
 	# GameController.load_scene("res://scenes/game/game.tscn")
-	GameController.load_scene("res://scenes/game/class_room_build.tscn")
+	GameController.to_state( GameController.GameState.GAME)
 
 func _on_option_pressed():
-	pass
+	GameController.to_state( GameController.GameState.OPTION)
 
 func _on_exit_pressed():
 	get_tree().quit()

@@ -1,0 +1,217 @@
+[gd_scene format=3 uid="uid://br3to2ydynxg0"]
+
+[ext_resource type="Script" uid="uid://bfgoxwgw814jc" path="res://scripts/option_menu.gd" id="1_aqt72"]
+[ext_resource type="Theme" uid="uid://bh0tggtrikq4a" path="res://default_theme.tres" id="2_dm6ss"]
+[ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="2_i827y"]
+[ext_resource type="Script" uid="uid://yspmd08sk6le" path="res://scenes/game/option_background.gd" id="2_iihqq"]
+[ext_resource type="Material" uid="uid://dliui74a63tsp" path="res://shaders/retro_shader_material.tres" id="4_d6cun"]
+
+[sub_resource type="Gradient" id="Gradient_dm6ss"]
+colors = PackedColorArray(0.36874467, 0.2691533, 0.41793415, 1, 0.8361479, 0.7468779, 0.51792663, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dm6ss"]
+frequency = 0.0108
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dm6ss"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_dm6ss")
+color_ramp = SubResource("Gradient_dm6ss")
+seamless = true
+
+[sub_resource type="Theme" id="Theme_i827y"]
+default_font = ExtResource("2_i827y")
+default_font_size = 48
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i827y"]
+content_margin_left = 20.0
+content_margin_top = 12.0
+content_margin_right = 20.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.37254903)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="OptionMenu" type="Control" unique_id=47041952 node_paths=PackedStringArray("master_slider", "sfx_slider", "bgm_slider", "master_label", "sfx_label", "bgm_label")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aqt72")
+master_slider = NodePath("MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master/MasterSlider")
+sfx_slider = NodePath("MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX/SFXSlider")
+bgm_slider = NodePath("MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM/BGMSlider")
+master_label = NodePath("MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master/MasterLevel")
+sfx_label = NodePath("MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX/SFXLevel")
+bgm_label = NodePath("MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM/BGMLevel")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=423297941]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("NoiseTexture2D_dm6ss")
+stretch_mode = 1
+script = ExtResource("2_iihqq")
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect" unique_id=89252585]
+material = ExtResource("4_d6cun")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1238709491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2138768309]
+layout_mode = 2
+theme_override_constants/separation = 36
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1608735170]
+layout_mode = 2
+theme = SubResource("Theme_i827y")
+text = "Settings"
+uppercase = true
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1441311692]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_i827y")
+
+[node name="SoundSection" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer" unique_id=1180390974]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection" unique_id=1529770339]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 32
+text = "SOUND"
+
+[node name="SoundPanel" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection" unique_id=1864566243]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Master" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel" unique_id=467854899]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master" unique_id=1246797178]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 24
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master" unique_id=1176715804]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="MasterLevel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master" unique_id=84442709]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 24
+text = "0 %"
+
+[node name="SFX" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel" unique_id=346244904]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX" unique_id=799144584]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 24
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX" unique_id=2067234836]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="SFXLevel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX" unique_id=1435259532]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 24
+text = "0 %"
+
+[node name="BGM" type="HBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel" unique_id=1653851193]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM" unique_id=587310125]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 24
+text = "BGM"
+
+[node name="BGMSlider" type="HSlider" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM" unique_id=785452532]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="BGMLevel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM" unique_id=945843929]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_i827y")
+theme_override_font_sizes/font_size = 24
+text = "0 %"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1328723797]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=2120771346]
+layout_mode = 2
+theme_override_constants/margin_right = 73
+
+[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1349334646]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+theme = ExtResource("2_dm6ss")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]

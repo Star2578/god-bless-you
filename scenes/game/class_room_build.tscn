@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bfovf46te3gmj"]
 
+[ext_resource type="PackedScene" uid="uid://br3to2ydynxg0" path="res://scenes/game/option_menu.tscn" id="1_07nv7"]
 [ext_resource type="PackedScene" uid="uid://cpx56qyo5aid1" path="res://scenes/class_room_build.tscn" id="2_f8ini"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="2_gqv1f"]
 [ext_resource type="PackedScene" uid="uid://qqg5d63765d4" path="res://scenes/objects/lamb.tscn" id="3_05s15"]
@@ -84,6 +85,9 @@ size = Vector3(6, 5, 1)
 points = PackedVector3Array(-2.793651, -2.3337953, -0.5, 0.09484663, 2.5952382, 0.59512615, -3.0470226, -2.5476193, 0.59512615, 2.793651, -2.3337953, -0.5, -0.086044244, 2.356593, -0.49448526, 3.0470226, -2.5476193, 0.59512615, -2.9515793, -2.1665363, 0.59512615, 2.793651, -2.1584058, -0.5, -0.09484663, 2.5952382, 0.59512615, 0.086044244, 2.356593, -0.49448526, 2.9515793, -2.1665363, 0.59512615, -2.793651, -2.1584058, -0.5, -3.0470226, -2.3563228, 0.59512615, 3.0470226, -2.3563228, 0.59512615, 2.6781967, -1.963661, -0.49459037, -2.6781967, -1.963661, -0.49459037)
 
 [node name="Node3D" type="Node3D" unique_id=1341646867]
+
+[node name="OptionMenu" parent="." unique_id=47041952 instance=ExtResource("1_07nv7")]
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1880564052]
 environment = SubResource("Environment_bu5ox")

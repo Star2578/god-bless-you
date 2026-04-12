@@ -24,10 +24,7 @@ buses/default_bus_layout="uid://ccoib4q0g35od"
 
 GameController="*uid://b5c6gc41nw3ym"
 AchievementManager="*uid://lr30cow8la70"
-
-[global_group]
-
-Particle=""
+InputController="*uid://b8chqyihqlwpm"
 
 [debug_draw_3d]
 
@@ -35,6 +32,7 @@ settings/addon_root_folder="res://addons/debug_draw_3d"
 
 [global_group]
 
+Particle=""
 NPC=""
 
 [layer_names]

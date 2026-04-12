@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxek5mihto16h"]
 
 [ext_resource type="Script" uid="uid://d37berb3crayo" path="res://scripts/main_menu.gd" id="1_sbiqi"]
+[ext_resource type="PackedScene" uid="uid://br3to2ydynxg0" path="res://scenes/game/option_menu.tscn" id="2_bto60"]
 [ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="2_e66b0"]
 [ext_resource type="Theme" uid="uid://bh0tggtrikq4a" path="res://default_theme.tres" id="3_3r4tm"]
 [ext_resource type="Texture2D" uid="uid://8vg3agnbqufn" path="res://icon.svg" id="4_gfgjs"]
@@ -77,27 +78,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sbiqi")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=888246856]
+[node name="UI" type="Control" parent="." unique_id=1986534326]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=888246856]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = SubResource("ViewportTexture_e66b0")
 
-[node name="TITLE" type="Label" parent="." unique_id=1882642485]
+[node name="TITLE" type="Label" parent="UI" unique_id=1882642485]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 50.0
-offset_right = 437.0
-offset_bottom = 119.0
+offset_right = 518.0
+offset_bottom = 130.0
 text = "GOD BLESS YOU"
 label_settings = SubResource("LabelSettings_ngy02")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=74657547]
-layout_mode = 1
-anchors_preset = 4
+[node name="VBoxContainer" type="VBoxContainer" parent="UI" unique_id=74657547]
+layout_mode = 0
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 50.0
@@ -106,24 +113,23 @@ offset_right = 150.0
 offset_bottom = 51.0
 grow_vertical = 2
 
-[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1488551606]
+[node name="PlayButton" type="Button" parent="UI/VBoxContainer" unique_id=1488551606]
 layout_mode = 2
 theme = ExtResource("3_3r4tm")
 text = "Play"
 
-[node name="OptionButton" type="Button" parent="VBoxContainer" unique_id=26261411]
+[node name="OptionButton" type="Button" parent="UI/VBoxContainer" unique_id=26261411]
 layout_mode = 2
 theme = ExtResource("3_3r4tm")
 text = "Option"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1215778087]
+[node name="QuitButton" type="Button" parent="UI/VBoxContainer" unique_id=1215778087]
 layout_mode = 2
 theme = ExtResource("3_3r4tm")
 text = "Quit"
 
-[node name="BadgesContainer" type="HBoxContainer" parent="." unique_id=1813906805]
-layout_mode = 1
-anchors_preset = 3
+[node name="BadgesContainer" type="HBoxContainer" parent="UI" unique_id=1813906805]
+layout_mode = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -135,42 +141,45 @@ offset_bottom = -10.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Badge1" type="TextureRect" parent="BadgesContainer" unique_id=244889542]
+[node name="Badge1" type="TextureRect" parent="UI/BadgesContainer" unique_id=244889542]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("4_gfgjs")
 
-[node name="Badge2" type="TextureRect" parent="BadgesContainer" unique_id=1637430899]
+[node name="Badge2" type="TextureRect" parent="UI/BadgesContainer" unique_id=1637430899]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("4_gfgjs")
 
-[node name="Badge3" type="TextureRect" parent="BadgesContainer" unique_id=414032306]
+[node name="Badge3" type="TextureRect" parent="UI/BadgesContainer" unique_id=414032306]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("4_gfgjs")
 
-[node name="Badge4" type="TextureRect" parent="BadgesContainer" unique_id=188783557]
+[node name="Badge4" type="TextureRect" parent="UI/BadgesContainer" unique_id=188783557]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 texture = ExtResource("4_gfgjs")
 
-[node name="Reset" type="Button" parent="." unique_id=1169799172]
-layout_mode = 1
-anchors_preset = 2
+[node name="Reset" type="Button" parent="UI" unique_id=1169799172]
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 50.0
 offset_top = -41.0
-offset_right = 214.0
+offset_right = 222.0
 offset_bottom = -10.0
 grow_vertical = 0
 theme = ExtResource("3_3r4tm")
 text = "Reset Achievements"
+
+[node name="OptionMenu" parent="." unique_id=47041952 instance=ExtResource("2_bto60")]
+visible = false
+layout_mode = 1
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=486835207]
 
@@ -254,7 +263,7 @@ lifetime = 10.0
 process_material = SubResource("ParticleProcessMaterial_fpthd")
 draw_pass_1 = SubResource("BoxMesh_bto60")
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/OptionButton" to="." method="_on_option_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/PlayButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/OptionButton" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="UI/VBoxContainer/QuitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="UI/Reset" to="." method="_on_reset_pressed"]
