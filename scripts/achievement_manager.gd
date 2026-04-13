@@ -12,6 +12,9 @@ var achievements = {
 	"im_stuck": false,
 }
 
+var ending_title: String
+var ending_text: String
+
 func _ready():
 	load_achievements()
 
@@ -20,8 +23,24 @@ func unlock_achievement(id: String):
 		achievements[id] = true
 		save_achievements()
 		print("Achievement Unlocked: ", id)
-		# Signal to trigger a UI popup
-		emit_signal("achievement_unlocked", id)
+		
+		if id == "trapped_in_the_void":
+			ending_title = "Trapped in The Void"
+			ending_text = "Being Invincible doesn't stop you from existing in the void. Alone. For all eternity"
+			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
+		elif id == "be_a_hero":
+			ending_title = "Be a Hero"
+			ending_text = "You choose to not question anything and becomes a hero. And for real this time, you are [TITLE CARD]"
+			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
+		elif id == "im_stuck":
+			ending_title = "Stuck..."
+			ending_text = "Eventhough you are invincible, you somehow cannot unstuck yourself from the locker"
+			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
+		elif id == "the_truth_of_this_world":
+			ending_title = "Realization"
+			ending_text = "Sweet dreams"
+			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
+
 
 func save_achievements():
 	for id in achievements.keys():

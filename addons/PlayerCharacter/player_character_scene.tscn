@@ -24,7 +24,7 @@ point_count = 2
 
 [sub_resource type="Curve" id="Curve_br1r7"]
 _limits = [3.0, 30.0, 0.0, 30.0]
-_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(30, 30), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 3), 0.0, 0.9, 0, 1, Vector2(30, 30), 0.9, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5yjma"]
@@ -39,10 +39,17 @@ collision_layer = 3
 floor_block_on_wall = false
 floor_max_angle = 1.13446
 floor_snap_length = 0.0
-platform_floor_layers = 4278190081
+platform_floor_layers = 4278190080
 script = ExtResource("1_h128t")
 desired_move_speed_curve = SubResource("Curve_2tsxa")
+max_desired_move_speed = 10.0
 in_air_move_speed_curve = SubResource("Curve_br1r7")
+walk_speed = 7.0
+walk_accel = 6.0
+walk_deccel = 5.0
+run_speed = 10.0
+run_accel = 8.0
+run_deccel = 7.0
 nb_jumps_in_air_allowed = 0
 
 [node name="StateMachine" type="Node" parent="." unique_id=931857651 node_paths=PackedStringArray("initial_state")]
@@ -110,7 +117,8 @@ texture = ExtResource("10_i3yl6")
 
 [node name="ShaderFilter" type="CanvasLayer" parent="CameraHolder/Camera" unique_id=1096882083]
 
-[node name="Retro" type="ColorRect" parent="CameraHolder/Camera/ShaderFilter" unique_id=1549188797]
+[node name="Retro1" type="ColorRect" parent="CameraHolder/Camera/ShaderFilter" unique_id=1549188797]
+unique_name_in_owner = true
 material = ExtResource("14_i3yl6")
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,6 +128,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Retro2" type="ColorRect" parent="CameraHolder/Camera/ShaderFilter" unique_id=741134611]
+unique_name_in_owner = true
 visible = false
 material = ExtResource("13_cdxyl")
 anchors_preset = 15

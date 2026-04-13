@@ -13,6 +13,7 @@ points = PackedVector3Array(-0.43707865, 2.4415698, 1.3623806, -0.5226965, -2.43
 [node name="Area3D" type="Area3D" parent="." unique_id=1483823062]
 collision_layer = 2
 script = ExtResource("2_fe3uc")
+pick3d = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1949481022]
 transform = Transform3D(0.3005621, 0, 0, 0, 0.24377447, 0, 0, 0, 0.12247418, 0, 0, 0)

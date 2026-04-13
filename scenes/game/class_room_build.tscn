@@ -131,6 +131,34 @@ size = Vector3(2, 1, 3)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hht2"]
 size = Vector3(2, 1, 3)
 
+[sub_resource type="Gradient" id="Gradient_ia4rw"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hl2gp"]
+gradient = SubResource("Gradient_ia4rw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ia4rw"]
+lifetime_randomness = 0.44
+particle_flag_rotate_y = true
+emission_shape = 3
+emission_box_extents = Vector3(300, 10, 20)
+angular_velocity_min = -180.00002
+angular_velocity_max = 179.99998
+orbit_velocity_min = -10.0
+orbit_velocity_max = 10.000001
+radial_velocity_min = -10.000022
+radial_velocity_max = 9.999977
+gravity = Vector3(0, 0, 0)
+damping_max = 30.000002
+color_ramp = SubResource("GradientTexture1D_hl2gp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hl2gp"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_2f1pg"]
+material = SubResource("StandardMaterial3D_hl2gp")
+
 [node name="Node3D" type="Node3D" unique_id=1341646867]
 
 [node name="OptionMenu" parent="." unique_id=47041952 instance=ExtResource("1_07nv7")]
@@ -2043,6 +2071,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10000, 0, 0)
 [node name="Portal2" parent="Secrety" unique_id=1391320865 instance=ExtResource("55_xm0wt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 458.58594, 1.4461536, 0.36207867)
 teleport_to = Vector3(0, 2, 0)
+scene = "res://scenes/game/npc_test.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Secrety" unique_id=162720788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.34375, 0, 0)
@@ -2097,6 +2126,15 @@ mesh = SubResource("BoxMesh_xm0wt")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Secrety/MeshInstance3D6/StaticBody3D" unique_id=1023792868]
 shape = SubResource("BoxShape3D_2hht2")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Secrety" unique_id=86070162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201.55371, 7.7265015, 0)
+amount = 50
+lifetime = 5.0
+explosiveness = 0.3
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_ia4rw")
+draw_pass_1 = SubResource("PrismMesh_2f1pg")
 
 [node name="com_chair" parent="." unique_id=57906594 instance=ExtResource("56_ia4rw")]
 transform = Transform3D(-0.48100397, 0, 0.8767184, 0, 1, 0, -0.8767184, 0, -0.48100397, -0.06780094, 0.6880237, 19.996012)

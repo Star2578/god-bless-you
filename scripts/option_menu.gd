@@ -46,3 +46,7 @@ func _on_back_button_pressed() -> void:
 
 func _option_menu_event(_from: GameController.GameState, to: GameController.GameState):
 	visible = (to == GameController.GameState.OPTION or to == GameController.GameState.INGAME_OPTION)
+
+
+func _on_mainmenu_button_pressed():
+	GameController.to_state(GameController.GameState.MAIN_MENU)

@@ -1,6 +1,7 @@
 extends Node
 
 var explosion_vfx: PackedScene = preload("res://vfx/explosion_1.tscn")
+var player: PlayerCharacter
 
 # Game state
 enum GameState {MAIN_MENU,OPTION,INGAME_OPTION,GAME, END_CREDIT}

@@ -204,7 +204,18 @@ size_flags_vertical = 8
 layout_mode = 2
 theme_override_constants/margin_right = 73
 
-[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1349334646]
+[node name="MainmenuButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer" unique_id=1349334646]
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme = ExtResource("2_dm6ss")
+theme_override_font_sizes/font_size = 32
+text = "Mainmenu"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=317719214]
+layout_mode = 2
+theme_override_constants/margin_right = 73
+
+[node name="BackButton" type="Button" parent="MarginContainer/HBoxContainer/MarginContainer2" unique_id=1173233936]
 custom_minimum_size = Vector2(120, 50)
 layout_mode = 2
 theme = ExtResource("2_dm6ss")
@@ -214,4 +225,5 @@ text = "Back"
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/Master/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/PanelContainer/SoundSection/SoundPanel/BGM/BGMSlider" to="." method="_on_bgm_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer/MainmenuButton" to="." method="_on_mainmenu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]

@@ -86,6 +86,8 @@ var default_input_actions : Dictionary
 @onready var hitbox: CollisionShape3D = %Hitbox
 @onready var state_machine: StateMachine = %StateMachine
 @onready var hud: CanvasLayer = %HUD
+@onready var retro_1: ColorRect = %Retro1
+@onready var retro_2: ColorRect = %Retro2
 
 func _ready():
 	#set and value references
@@ -97,6 +99,7 @@ func _ready():
 	
 	build_default_keybinding()
 	input_actions_check()
+	GameController.player = self
 	
 func build_default_keybinding():
 	#build it in runtime to ensure that export variables have been set
@@ -154,9 +157,9 @@ func input_actions_check():
 func _physics_process(_delta: float):
 	modify_physics_properties()
 
-	out_of_bound()
-
 	move_and_slide()
+
+	out_of_bound()
 	
 func modify_physics_properties():
 	last_frame_position = global_position #get play char global position every frame
@@ -196,5 +199,5 @@ func tween_model_height(state_model_height : float):
 	model_tween.finished.connect(Callable(model_tween, "kill"))
 
 func out_of_bound():
-	if position.y < -100:
+	if position.y < -500:
 		AchievementManager.unlock_achievement("trapped_in_the_void")

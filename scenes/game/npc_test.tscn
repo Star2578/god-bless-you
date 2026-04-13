@@ -2,6 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://c1l16hkv5iv3q" path="res://shaders/m_sky.gdshader" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_sul5r"]
+[ext_resource type="PackedScene" uid="uid://c6c0itn24hp85" path="res://scenes/objects/portal.tscn" id="3_1h6gr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0sr1o"]
 shader = ExtResource("1_7h61r")
@@ -127,3 +128,6 @@ amount = 30
 lifetime = 30.0
 process_material = SubResource("ParticleProcessMaterial_7h61r")
 draw_pass_1 = SubResource("BoxMesh_7h61r")
+
+[node name="Portal" parent="." unique_id=368253394 instance=ExtResource("3_1h6gr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431527, 1.7861814, 40.379944)

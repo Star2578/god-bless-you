@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b7xclkmlraskg"]
+
+[ext_resource type="Script" uid="uid://cv5a5s73qyqcw" path="res://scripts/ending.gd" id="1_5v7ed"]
+[ext_resource type="Theme" uid="uid://bh0tggtrikq4a" path="res://default_theme.tres" id="1_jdujq"]
+[ext_resource type="AudioStream" uid="uid://dq8sevc1e8sai" path="res://sounds/sfx/freesound_community-tada-fanfare-a-6313.mp3" id="3_omwvx"]
+
+[node name="ENDING" type="Control" unique_id=167722443]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5v7ed")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1613956531]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Mainmenu" type="Button" parent="." unique_id=2053378713]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 181.0
+offset_right = 85.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jdujq")
+theme_override_font_sizes/font_size = 28
+text = "Mainmenu"
+
+[node name="Title" type="Label" parent="." unique_id=677200391]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.5
+offset_top = -174.5
+offset_right = 247.5
+offset_bottom = -124.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jdujq")
+theme_override_font_sizes/font_size = 50
+text = "trewsdfvsdfsdfsdfwedsf"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="." unique_id=1221040803]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jdujq")
+text = "trewsdfvsdfsdfsdfwedsf"
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1335939750]
+stream = ExtResource("3_omwvx")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="pressed" from="Mainmenu" to="." method="_on_mainmenu_pressed"]

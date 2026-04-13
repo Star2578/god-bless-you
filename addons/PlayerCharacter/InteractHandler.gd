@@ -14,7 +14,7 @@ func _physics_process(delta):
 		var distance = hold_pos.global_position.distance_to(held_object.global_position)
 		
 		if distance > break_distance:
-			release_object()
+			held_object.global_position = hold_pos.global_position
 			return
 		
 		var target_vel = (hold_pos.global_position - held_object.global_position) * 20.0
