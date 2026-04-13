@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b5k02tjqyx10s"]
+
+[ext_resource type="PackedScene" uid="uid://d4ms3pa0yh6gp" path="res://assets/principle/COMPUTERscreen.fbx" id="1_q8rpc"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_mhavn"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5diqu"]
+points = PackedVector3Array(-0.22705299, -0.27640855, -0.09653333, 0.53095967, 0.5575456, 0.040999953, 0.5589333, 0.5794, -0.044117942, -0.5589333, 0.5794, -0.044117942, 0.22705299, -0.27640855, 0.09560001, -0.48509404, 0.51458937, 0.07228669, -0.5239179, -0.08431965, 0.060637612, 0.5589333, -0.08431965, -0.044117942, 0.22705299, -0.27640855, -0.09653333, -0.22705299, -0.27640855, 0.09560001, 0.48509404, 0.51458937, 0.07228669, -0.5589333, -0.08431965, -0.044117942, 0.5239179, -0.08431965, 0.060637612, -0.53095967, 0.5575456, 0.040999953, 0.20954528, -0.22400513, -0.09653333, -0.20954528, -0.22400513, 0.09560001, -0.20954528, -0.22400513, -0.09653333, 0.20954528, -0.22400513, 0.09560001, -0.47095484, -0.029937211, 0.07016612, 0.47095484, -0.029937211, 0.07016612, -0.22705299, -0.24152991, -0.09653333, 0.22705299, -0.24152991, -0.09653333, -0.22705299, -0.24152991, 0.09560001, 0.22705299, -0.24152991, 0.09560001)
+
+[node name="com_screen" type="RigidBody3D" unique_id=57906594]
+
+[node name="COMPUTERscreen" parent="." unique_id=1039174377 instance=ExtResource("1_q8rpc")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1483823062]
+collision_layer = 2
+script = ExtResource("2_mhavn")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=712275666]
+shape = SubResource("ConvexPolygonShape3D_5diqu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1828920543]
+shape = SubResource("ConvexPolygonShape3D_5diqu")

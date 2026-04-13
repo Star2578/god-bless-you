@@ -89,7 +89,7 @@ near = 0.01
 far = 1000.0
 
 [node name="HoldPos" type="Marker3D" parent="CameraHolder/Camera" unique_id=216480215]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.585647e-08, 0, -1.50662)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7377934e-08, 0, -1.0838805)
 
 [node name="InteractRay" type="RayCast3D" parent="CameraHolder/Camera" unique_id=2136533167]
 unique_name_in_owner = true

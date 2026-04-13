@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c6c0itn24hp85"]
+
+[ext_resource type="Script" uid="uid://d3o2ju20hm1ge" path="res://scripts/portal.gd" id="1_gd70c"]
+[ext_resource type="Texture2D" uid="uid://8vg3agnbqufn" path="res://icon.svg" id="1_l1is6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gd70c"]
+
+[node name="Portal" type="Area3D" unique_id=368253394]
+script = ExtResource("1_gd70c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=785831679]
+shape = SubResource("BoxShape3D_gd70c")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1605052247]
+billboard = 1
+texture = ExtResource("1_l1is6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

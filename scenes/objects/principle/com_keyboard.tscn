@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://btpxyaxu7nubd"]
+
+[ext_resource type="PackedScene" uid="uid://b71hj5fsrb7mj" path="res://assets/principle/COMPUTERkeyboard.fbx" id="1_orec1"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_bv8px"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_42wp0"]
+points = PackedVector3Array(-0.3960889, -0.14578888, 0.033299997, 0.3960889, 0.15127778, -0.028588884, 0.3960889, -0.14578888, -0.028588884, -0.3960889, 0.15127778, -0.028588884, -0.3960889, -0.14578888, -0.028588884, 0.3960889, -0.14578888, 0.033299997, -0.3960889, 0.13889031, 0.033299997, 0.3960889, 0.13889031, 0.033299997)
+
+[node name="com_keyboard" type="RigidBody3D" unique_id=57906594]
+mass = 0.05
+
+[node name="COMPUTERkeyboard" parent="." unique_id=1801270281 instance=ExtResource("1_orec1")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1483823062]
+collision_layer = 2
+script = ExtResource("2_bv8px")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1134569342]
+shape = SubResource("ConvexPolygonShape3D_42wp0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=570201564]
+shape = SubResource("ConvexPolygonShape3D_42wp0")

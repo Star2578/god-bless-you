@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://df6711x6l5g75"]
+
+[ext_resource type="PackedScene" uid="uid://e6gmahttr2s6" path="res://assets/principle/PRINCIPALOFFICEtelephone.fbx" id="1_6ic24"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_2qem7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7fui7"]
+points = PackedVector3Array(-0.14816007, 0.08629779, -0.10532675, 0.19518808, -0.0016786605, 0.15670435, 0.18876326, 0.0047154427, 0.16954397, -0.18270661, -0.073941246, 0.16414513, -0.09301114, 0.20962143, 0.21440238, 0.16952702, -0.0016786605, -0.18908256, 0.09269686, 0.20962143, 0.13110536, -0.15169057, -0.073898114, -0.18852657, 0.16390719, -0.07402434, 0.1828245, 0.17743212, -0.074882835, -0.17128968, -0.19550237, 0.0047154427, -0.15064396, 0.11136391, 0.074170165, -0.14728777, 0.09269686, 0.20962143, 0.21440238, -0.19550237, 0.0047154427, 0.15028454, -0.15064335, 0.0047154427, -0.19550237, 0.19518808, 0.0047154427, -0.15064396, -0.15153919, -0.07376524, 0.1886822, -0.09301114, 0.20962143, 0.13110536, -0.14956647, 0.14753929, 0.10093636, 0.14928341, 0.14755777, 0.10707114, -0.033216376, 0.09816086, -0.11678718, -0.14945632, -0.078499995, 0.15582018, -0.18867, -0.07376872, -0.1512398, 0.14806476, 0.08633802, -0.10549658, 0.18857759, -0.07392513, 0.15172127, 0.14914203, -0.078499995, -0.15449192, 0.15141031, -0.07392799, -0.18857104, 0.15671563, -0.0016786605, 0.19518307, -0.116334535, 0.079945795, -0.13950717, -0.14945632, -0.078499995, -0.15449192, 0.14914203, -0.078499995, 0.15582018, -0.16987956, 0.0047154427, 0.18876326)
+
+[node name="prin_phone" type="RigidBody3D" unique_id=57906594]
+mass = 2.0
+
+[node name="PRINCIPALOFFICEtelephone" parent="." unique_id=2091855253 instance=ExtResource("1_6ic24")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1483823062]
+collision_layer = 2
+script = ExtResource("2_2qem7")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1545561540]
+shape = SubResource("ConvexPolygonShape3D_7fui7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=279443553]
+shape = SubResource("ConvexPolygonShape3D_7fui7")

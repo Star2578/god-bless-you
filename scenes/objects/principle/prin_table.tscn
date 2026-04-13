@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ct445gs6j1tnw"]
+
+[ext_resource type="PackedScene" uid="uid://ct0o8hbnthppg" path="res://assets/principle/PRINCIPALOFFICEdesk.fbx" id="1_6670l"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_n8iu6"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uifid"]
+points = PackedVector3Array(-0.58851814, -0.25302857, 1.0952734, -2.6930795, -0.16883689, -1.1769793, -2.6930795, 0.16776508, -1.1769793, 2.0198092, -0.16883689, -1.1769793, 2.0198092, 0.16776508, 1.179465, -2.6930795, 0.16776508, 1.179465, 2.0198092, 0.16776508, -1.1769793, 2.0198092, -0.16883689, 1.179465, -2.6930795, -0.16883689, 1.179465, -2.313038, -0.24030301, -1.0264, -0.58851814, -0.25302857, -1.092557, -2.3078418, -0.23978329, 1.0264)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rydap"]
+points = PackedVector3Array(-0.66459996, -0.33194882, 1.0060923, -2.38414, -2.1296496, -1.0260913, -0.66459996, -2.1097593, -1.0036066, -2.384401, -0.31178543, -1.0264, -2.3822978, -2.1277237, 1.0264, -2.3822978, -0.31398436, 1.0264, -0.66459996, -0.33194882, -1.0036066, -0.66459996, -2.1097593, 1.0060923)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_to8vv"]
+points = PackedVector3Array(2.1256998, -2.0878189, -1.0761188, 2.6930795, 0.16776514, 1.179465, 2.038956, 0.1012, 1.1128999, 2.6930795, 0.16776514, -1.1769793, 2.5247123, -2.1886795, 1.179465, 2.038956, 0.1012, -1.1104141, 2.5247123, -2.1886795, -1.1769793, 2.1256998, -2.0878189, 1.0786046, 2.019941, -0.16900158, -1.1769793, 2.019941, -0.16900158, 1.179465, 2.6930795, -0.16900158, 1.179465, 2.6930795, -0.16900158, -1.1769793)
+
+[node name="prin_table" type="RigidBody3D" unique_id=57906594]
+mass = 10.0
+
+[node name="PRINCIPALOFFICEdesk" parent="." unique_id=32027057 instance=ExtResource("1_6670l")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1483823062]
+collision_layer = 2
+script = ExtResource("2_n8iu6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D" unique_id=1963524311]
+shape = SubResource("ConvexPolygonShape3D_uifid")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=1220571034]
+shape = SubResource("ConvexPolygonShape3D_rydap")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1074421706]
+shape = SubResource("ConvexPolygonShape3D_to8vv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=845035894]
+shape = SubResource("ConvexPolygonShape3D_uifid")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1426767576]
+shape = SubResource("ConvexPolygonShape3D_rydap")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=147078537]
+shape = SubResource("ConvexPolygonShape3D_to8vv")
