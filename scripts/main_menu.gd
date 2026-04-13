@@ -4,6 +4,7 @@ extends Control
 @onready var badge_2 = %Badge2
 @onready var badge_3 = %Badge3
 @onready var badge_4 = %Badge4
+@onready var badge_5 = %Badge5
 
 @onready var option_menu_scene : Node = $OptionMenu
 
@@ -14,7 +15,8 @@ func update_badges():
 	badge_1.modulate = Color(0,0,0,1) if not AchievementManager.is_unlocked("beware_explosive") else Color(1,1,1,1)
 	badge_2.modulate = Color(0,0,0,1) if not AchievementManager.is_unlocked("trapped_in_the_void") else Color(1,1,1,1)
 	badge_3.modulate = Color(0,0,0,1) if not AchievementManager.is_unlocked("be_a_hero") else Color(1,1,1,1)
-	badge_4.modulate = Color(0,0,0,1) if not AchievementManager.is_unlocked("the_truth_of_this_world") else Color(1,1,1,1)
+	badge_4.modulate = Color(0,0,0,1) if not AchievementManager.is_unlocked("im_stuck") else Color(1,1,1,1)
+	badge_5.modulate = Color(0,0,0,1) if not AchievementManager.is_unlocked("the_truth_of_this_world") else Color(1,1,1,1)
 
 func _on_start_pressed():
 	# GameController.load_scene("res://scenes/game/game.tscn")

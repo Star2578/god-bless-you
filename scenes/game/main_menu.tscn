@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://br3to2ydynxg0" path="res://scenes/game/option_menu.tscn" id="2_bto60"]
 [ext_resource type="FontFile" uid="uid://bwr73i28ligrq" path="res://addons/Arts/Ticketing.ttf" id="2_e66b0"]
 [ext_resource type="Theme" uid="uid://bh0tggtrikq4a" path="res://default_theme.tres" id="3_3r4tm"]
-[ext_resource type="Texture2D" uid="uid://8vg3agnbqufn" path="res://icon.svg" id="4_gfgjs"]
+[ext_resource type="Texture2D" uid="uid://do6f6cm2mgi6k" path="res://assets/icons/explosive.png" id="4_efcww"]
 [ext_resource type="Material" uid="uid://dic5nwo8c8xei" path="res://shaders/dream_shader_material.tres" id="5_fpthd"]
+[ext_resource type="Texture2D" uid="uid://bbhw7buyfcmgt" path="res://assets/icons/void.png" id="5_nsdtn"]
+[ext_resource type="Texture2D" uid="uid://y2e0p5njhnmj" path="res://assets/icons/hero.png" id="6_4oldi"]
 [ext_resource type="Shader" uid="uid://c1l16hkv5iv3q" path="res://shaders/m_sky.gdshader" id="6_fpthd"]
+[ext_resource type="Texture2D" uid="uid://wy0n6kdjllfg" path="res://assets/icons/locker.png" id="7_73xsm"]
+[ext_resource type="Texture2D" uid="uid://bfv7h8envbltf" path="res://assets/icons/truth.png" id="8_21mov"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e66b0"]
 viewport_path = NodePath("SubViewport")
@@ -145,25 +149,36 @@ grow_vertical = 0
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-texture = ExtResource("4_gfgjs")
+tooltip_text = "Beware Explosive"
+texture = ExtResource("4_efcww")
 
 [node name="Badge2" type="TextureRect" parent="UI/BadgesContainer" unique_id=1637430899]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-texture = ExtResource("4_gfgjs")
+tooltip_text = "Trapped in the Void"
+texture = ExtResource("5_nsdtn")
 
 [node name="Badge3" type="TextureRect" parent="UI/BadgesContainer" unique_id=414032306]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-texture = ExtResource("4_gfgjs")
+tooltip_text = "Hero"
+texture = ExtResource("6_4oldi")
 
 [node name="Badge4" type="TextureRect" parent="UI/BadgesContainer" unique_id=188783557]
 unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-texture = ExtResource("4_gfgjs")
+tooltip_text = "Step-bro I'm stuck!"
+texture = ExtResource("7_73xsm")
+
+[node name="Badge5" type="TextureRect" parent="UI/BadgesContainer" unique_id=1298965481]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+tooltip_text = "???"
+texture = ExtResource("8_21mov")
 
 [node name="Reset" type="Button" parent="UI" unique_id=1169799172]
 layout_mode = 0

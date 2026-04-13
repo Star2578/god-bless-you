@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3s8yxuvpmekm" path="res://addons/PlayerCharacter/StateMachine/player_character_script.gd" id="1_h128t"]
 [ext_resource type="Script" uid="uid://b0fbr48rbvn27" path="res://addons/PlayerCharacter/Camera/camera_script.gd" id="2_x12n0"]
-[ext_resource type="Script" path="res://addons/PlayerCharacter/InteractHandler.gd" id="10_dwwo3"]
+[ext_resource type="Script" uid="uid://qnuv5xlitbvx" path="res://addons/PlayerCharacter/InteractHandler.gd" id="10_dwwo3"]
 [ext_resource type="Texture2D" uid="uid://dtliihyced2em" path="res://assets/hands/Untitled-1.png" id="10_i3yl6"]
 [ext_resource type="StyleBox" uid="uid://c50syhy1a4dmh" path="res://addons/PlayerCharacter/UI/player_character_ui_theme.tres" id="11_kcsu1"]
 [ext_resource type="LabelSettings" uid="uid://d1rg1oruwidf" path="res://addons/PlayerCharacter/UI/label_font_setting.tres" id="12_gnmoh"]
@@ -35,7 +35,7 @@ albedo_color = Color(0.196078, 0.223529, 1, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p2iaj"]
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=307017552 groups=["PlayerCharacter"]]
-collision_layer = 2
+collision_layer = 3
 floor_block_on_wall = false
 floor_max_angle = 1.13446
 floor_snap_length = 0.0
@@ -416,7 +416,6 @@ label_settings = ExtResource("12_gnmoh")
 vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="HUD" unique_id=1807707837]
-visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

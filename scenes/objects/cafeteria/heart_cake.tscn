@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ciqg5jt0gtn11"]
+
+[ext_resource type="PackedScene" uid="uid://j5jh7bqyrugl" path="res://assets/cafeteria/CAFETERIAcake_002.fbx" id="1_sb66m"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_r6auj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fntvm"]
+points = PackedVector3Array(-0.00918702, -0.03843809, 0.002530417, 0.019916093, 0.04310655, 0.0054946323, 0.021292593, 0.041397568, 0.0069261035, 0.047606807, -0.047606807, -0.0032831852, -0.025414035, -0.019095536, -0.0072849127, 0.019095536, 0.025414035, -0.0072849127, 0.049792793, -0.049792793, 0.0088, -0.043729726, -0.016066667, 0.0088, 0.029860662, 0.034527328, 0.0088, 0.006864266, 0.029916521, -0.0049990984, 0.038643032, -0.038643032, -0.0072999997, -0.03759159, -0.005317725, 0.002664866, 0.029410034, 0.02609026, -0.0031905756, -0.03759159, -0.028333332, 0.0088, 0.011465467, 0.040665463, 0.0088, 0.038758095, 0.009307003, 0.004006234, -0.02609026, -0.029410034, -0.0031905756, -0.029916521, -0.006864266, -0.0049990984, 0.005317725, 0.03759159, 0.002664866, -0.04255357, -0.019726101, 0.0025377893, 0.050463907, -0.050463907, 0.0010936498, 0.03452256, 0.00597695, -0.004522628, -0.00597695, -0.03452256, -0.004522628, 0.019455165, 0.037492163, -0.0017690526, 0.029994844, 0.034051184, 0.0025488108, 0.031387992, -0.04672853, 0.0088, -0.034051184, -0.029994844, 0.0025488108, 0.024599755, 0.019771317, -0.007261104, -0.019771317, -0.024599755, -0.007261104, 0.04672853, -0.031387992, 0.0088, 0.036831398, 0.0033823024, -0.003223781, -0.009307003, -0.038758095, 0.004006234)
+
+[node name="heart_cake" type="RigidBody3D" unique_id=230226493]
+mass = 0.1
+
+[node name="CAFETERIAcake_002" parent="." unique_id=574315268 instance=ExtResource("1_sb66m")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=447132717]
+collision_layer = 2
+script = ExtResource("2_r6auj")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=337337628]
+transform = Transform3D(0.8388349, 0, 0, 0, 0.8388349, 0, 0, 0, 0.8388349, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fntvm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=809087525]
+transform = Transform3D(0.8388349, 0, 0, 0, 0.8388349, 0, 0, 0, 0.8388349, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_fntvm")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cuh65y7751lwc"]
+
+[ext_resource type="PackedScene" uid="uid://7tv8mkssh3rn" path="res://assets/cafeteria/CAFETERIAvendingmachine.fbx" id="1_wfvna"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_sqsal"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i56mr"]
+points = PackedVector3Array(0.5498388, 1.0874001, 0.42008674, -0.562331, -1.367044, -0.42370385, -0.4020763, -1.1192559, -0.45348993, 0.55763245, -1.3988999, 0.42617926, -0.5645403, 1.0776196, 0.41648608, 0.5468427, 1.080788, -0.42642897, -0.562371, 1.0728321, -0.4237328, -0.56589997, -1.3749202, 0.4175641, 0.5527236, -1.3880665, -0.4306, 0.5235207, -0.8579797, 0.4306, 0.4085524, -1.0924461, -0.4416322, 0.55853325, -0.8523162, 0.4269817, 0.552603, -0.8060938, -0.4306, 0.5112801, 1.0876379, 0.42017224, 0.5083363, 1.0806589, -0.42638662)
+
+[node name="vending_machine" type="RigidBody3D" unique_id=679868442]
+mass = 60.0
+
+[node name="CAFETERIAvendingmachine" parent="." unique_id=877771894 instance=ExtResource("1_wfvna")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=36321623]
+collision_layer = 2
+script = ExtResource("2_sqsal")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1955820023]
+transform = Transform3D(1.0001583, 0, 0, 0, 1.0001583, 0, 0, 0, 1.0001583, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_i56mr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=180436133]
+transform = Transform3D(1.0001583, 0, 0, 0, 1.0001583, 0, 0, 0, 1.0001583, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_i56mr")

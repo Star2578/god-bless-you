@@ -9,6 +9,7 @@ var achievements = {
 	"trapped_in_the_void": false,
 	"be_a_hero": false,
 	"the_truth_of_this_world": false,
+	"im_stuck": false,
 }
 
 func _ready():

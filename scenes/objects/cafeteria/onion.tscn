@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c7p48fqii5a4t"]
+
+[ext_resource type="PackedScene" uid="uid://cf8mem85ubtjk" path="res://assets/cafeteria/CAFETERIAonion.fbx" id="1_iyyo7"]
+[ext_resource type="Script" uid="uid://d4dj3krkbou8q" path="res://scripts/objects/interactable.gd" id="2_fmiqj"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bbjfw"]
+points = PackedVector3Array(0.776807, -0.3302907, 0.48689196, -0.97224915, -0.08795082, -0.051615506, -0.9683918, -0.08560365, 0.0733511, 0.11728226, 1.8536228, -0.094497636, 0.36538753, -0.21107496, -0.88537765, -0.34029502, 0.37393698, 0.85798734, -0.26223403, -0.8080088, 0.36898166, -0.5078813, -0.0004607056, -0.84013194, 0.895738, 0.12735036, -0.38015136, 0.15839607, -0.80759066, -0.43071413, 0.63715804, 0.41688642, 0.6371581, -0.13675523, 1.8525723, 0.074670054, -0.051727526, -0.3833904, 0.9131232, -0.5092276, -0.6679907, -0.50941503, 0.23830384, 0.37383333, -0.8782854, 0.7052933, -0.6800949, 0.032077257, -0.7149246, -0.00011018102, 0.69535327, -0.612744, 0.41733703, -0.6531222, 0.88731205, 0.41619426, 0.071568355, -0.9194209, 0.3738623, 0.03136673, 0.32213855, 0.37340713, 0.86170244, -0.64365894, -0.6858613, 0.28583148, 0.117050305, 1.8511477, 0.11685992, 0.4983072, -0.687737, 0.49811655, -0.12815455, 1.7212312, -0.20706706, 0.8265615, -0.42223865, -0.34424922, 0.6485229, 0.3332336, -0.6680943, -0.05152553, -0.42073965, -0.8865099, -0.050942514, 0.37440687, -0.9154207, -0.82568485, 0.37551838, 0.39788833, 0.4069178, -0.0024096288, 0.90714985, 0.9514397, -0.045306824, 0.19890639)
+
+[node name="onion" type="RigidBody3D" unique_id=1607186659]
+mass = 0.01
+
+[node name="CAFETERIAonion" parent="." unique_id=298266522 instance=ExtResource("1_iyyo7")]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1934224593]
+collision_layer = 2
+script = ExtResource("2_fmiqj")
+pick3d = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1842402108]
+transform = Transform3D(0.017561281, 0, 0, 0, 0.017561281, 0, 0, 0, 0.017561281, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_bbjfw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1434414071]
+transform = Transform3D(0.017561281, 0, 0, 0, 0.017561281, 0, 0, 0, 0.017561281, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_bbjfw")
