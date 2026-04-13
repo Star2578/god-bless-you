@@ -1140,6 +1140,7 @@ data = PackedVector3Array(-7, 1, -0.036599997, -5.0000997, -1, -0.036599997, -5.
 [node name="class_room_build" type="Node3D" unique_id=620539965]
 
 [node name="Static" type="Node3D" parent="." unique_id=879150478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0046052933, -0.002044201, -0.00022935867)
 
 [node name="wallsfloor" type="MeshInstance3D" parent="Static" unique_id=1834719848]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.603343, 0, -0.3930602)
