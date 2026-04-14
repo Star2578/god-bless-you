@@ -23,17 +23,21 @@ func init_explosion_vfx(parent: Node, g_pos: Vector3):
 func to_state(state:GameState):
 	if self.game_state == GameState.MAIN_MENU:
 		if state == GameState.GAME:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			GameController.load_scene("res://scenes/game/class_room_build.tscn")
 
 	if self.game_state == GameState.GAME:
 		if state == GameState.INGAME_OPTION:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			set_pause_game(true)
 
 	if self.game_state == GameState.INGAME_OPTION:
 		if state == GameState.MAIN_MENU:
-			# TODO: handle return to mainmenu
-			pass
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			set_pause_game(false)
+			GameController.load_scene("res://scenes/game/main_menu.tscn")
 		if state == GameState.GAME:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			set_pause_game(false)
 
 	state_changed.emit(self.game_state,state)
@@ -41,4 +45,3 @@ func to_state(state:GameState):
 
 func set_pause_game(b:bool):
 	get_tree().paused = b
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if b else Input.MOUSE_MODE_CAPTURED
