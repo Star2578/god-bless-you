@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bfovf46te3gmj"]
 
 [ext_resource type="PackedScene" uid="uid://br3to2ydynxg0" path="res://scenes/game/option_menu.tscn" id="1_07nv7"]
+[ext_resource type="NavigationMesh" uid="uid://ba31ho4odbxk4" path="res://assets/navmeshs/classroom_navmesh.tres" id="2_b0fir"]
 [ext_resource type="PackedScene" uid="uid://cpx56qyo5aid1" path="res://scenes/class_room_build.tscn" id="2_f8ini"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="2_gqv1f"]
 [ext_resource type="PackedScene" uid="uid://qqg5d63765d4" path="res://scenes/objects/lamb.tscn" id="3_05s15"]
@@ -43,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://fwjdqdxc3h06" path="res://scenes/objects/bathroom/toilet_urinal.tscn" id="38_dqyxw"]
 [ext_resource type="PackedScene" uid="uid://dpsryx3ktbt24" path="res://scenes/objects/bathroom/toilet_poop.tscn" id="39_07nv7"]
 [ext_resource type="PackedScene" uid="uid://cf2l2f7i8k4vq" path="res://scenes/objects/radio.tscn" id="40_dqyxw"]
+[ext_resource type="PackedScene" uid="uid://cpawxrx873od3" path="res://scenes/characters/npcs/teacher_npc.tscn" id="43_u2wea"]
 [ext_resource type="PackedScene" uid="uid://cuh65y7751lwc" path="res://scenes/objects/cafeteria/vending_machine.tscn" id="43_4r1qg"]
 [ext_resource type="PackedScene" uid="uid://dlpqd35oi0eny" path="res://scenes/objects/cafeteria/cafe_showtable.tscn" id="44_6aabj"]
 [ext_resource type="PackedScene" uid="uid://bmadtnjsguuf7" path="res://scenes/objects/cafeteria/cafe_tray.tscn" id="45_58pjx"]
@@ -168,6 +170,13 @@ visible = false
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1880564052]
 environment = SubResource("Environment_bu5ox")
 
+[node name="Classroom_NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=286648471]
+navigation_mesh = ExtResource("2_b0fir")
+
+[node name="NavigationLink3D" type="NavigationLink3D" parent="Classroom_NavigationRegion3D" unique_id=1471091801]
+start_position = Vector3(14.14, 0.375, -2.929)
+end_position = Vector3(14.018802, 0.32619786, -4.8457284)
+
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("2_gqv1f")]
 transform = Transform3D(0.59999996, 0, -3.5527137e-15, 0, 0.59999996, 0, 3.5527137e-15, 0, 0.59999996, 16.638477, 0.7409233, -5.8743753)
 walk_speed = 5.0
@@ -175,11 +184,30 @@ run_speed = 7.0
 run_accel = 6.0
 run_deccel = 5.0
 
+[node name="TeacherManNPC" type="Node3D" parent="." unique_id=1182982773]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="npc_teacher_man" parent="TeacherManNPC" unique_id=1283309650 node_paths=PackedStringArray("roaming_paths") instance=ExtResource("43_u2wea")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.800757, 0, 18.373024)
+roaming_paths = NodePath("../Path")
+
+[node name="Path" type="Node3D" parent="TeacherManNPC" unique_id=1843149100]
+
+[node name="Marker3D" type="Marker3D" parent="TeacherManNPC/Path" unique_id=121766703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8157563, 0.38995636, 19.742935)
+
+[node name="Marker3D2" type="Marker3D" parent="TeacherManNPC/Path" unique_id=260120187]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5397716, 0.38995636, 22.77796)
+
+[node name="Marker3D3" type="Marker3D" parent="TeacherManNPC/Path" unique_id=955660880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.375285, 0.38995636, 22.77796)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=574483698]
 transform = Transform3D(1, 0, 0, 0, 0.5478261, 0.83659226, 0, -0.83659226, 0.5478261, 0, 11.060055, 0)
 shadow_enabled = true
 
 [node name="class_room_build" parent="." unique_id=620539965 instance=ExtResource("2_f8ini")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005578995, 0.00014412403, 0.0007548332)
 
 [node name="Signs" type="Node3D" parent="." unique_id=21337563]
 
@@ -214,6 +242,7 @@ mesh = SubResource("BoxMesh_4wub3")
 
 [node name="Ceiling" type="MeshInstance3D" parent="Lights" unique_id=730433195]
 transform = Transform3D(-1, 5.9604645e-08, 0, -5.9604645e-08, -1, 0, 0, 0, 1, 4.9183865, 3.2094803, 0)
+visible = false
 mesh = SubResource("BoxMesh_05s15")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Lights/Ceiling" unique_id=1362967866]
