@@ -12,3 +12,4 @@ func _ready():
 
 func _on_mainmenu_pressed():
 	get_tree().change_scene_to_file("res://scenes/game/main_menu.tscn")
+	GameController.to_state(GameController.GameState.MAIN_MENU)

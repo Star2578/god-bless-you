@@ -27,18 +27,22 @@ func unlock_achievement(id: String):
 		if id == "trapped_in_the_void":
 			ending_title = "Trapped in The Void"
 			ending_text = "Being Invincible doesn't stop you from existing in the void. Alone. For all eternity"
+			GameController.to_state(GameController.GameState.END_CREDIT)
 			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
 		elif id == "be_a_hero":
 			ending_title = "Be a Hero"
 			ending_text = "You choose to not question anything and becomes a hero. And for real this time, you are [TITLE CARD]"
+			GameController.to_state(GameController.GameState.END_CREDIT)
 			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
 		elif id == "im_stuck":
 			ending_title = "Stuck..."
 			ending_text = "Eventhough you are invincible, you somehow cannot unstuck yourself from the locker"
+			GameController.to_state(GameController.GameState.END_CREDIT)
 			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
 		elif id == "the_truth_of_this_world":
 			ending_title = "???"
 			ending_text = "All of this is a [REDACTED]. Until next time."
+			GameController.to_state(GameController.GameState.END_CREDIT)
 			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
 
 
