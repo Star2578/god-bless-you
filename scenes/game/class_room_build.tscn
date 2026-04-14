@@ -67,6 +67,7 @@
 [ext_resource type="PackedScene" uid="uid://blnrt6i6w7134" path="res://scenes/objects/principle/prin_chairr.tscn" id="65_xsl47"]
 [ext_resource type="PackedScene" uid="uid://c1wepmvk36k88" path="res://scenes/objects/principle/com_printer.tscn" id="66_l4k3e"]
 [ext_resource type="PackedScene" uid="uid://c1ketehpv7a1t" path="res://scenes/objects/principle/prin_plant.tscn" id="67_aqfe0"]
+[ext_resource type="PackedScene" uid="uid://cgyhlgdfuulbb" path="res://scenes/objects/toiletvincible.tscn" id="68_hl2gp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f8ini"]
 
@@ -170,14 +171,13 @@ environment = SubResource("Environment_bu5ox")
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("2_gqv1f")]
 transform = Transform3D(0.59999996, 0, -3.5527137e-15, 0, 0.59999996, 0, 3.5527137e-15, 0, 0.59999996, 16.638477, 0.7409233, -5.8743753)
 walk_speed = 5.0
-walk_accel = 6.0
-walk_deccel = 5.0
 run_speed = 7.0
 run_accel = 6.0
 run_deccel = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=574483698]
 transform = Transform3D(1, 0, 0, 0, 0.5478261, 0.83659226, 0, -0.83659226, 0.5478261, 0, 11.060055, 0)
+shadow_enabled = true
 
 [node name="class_room_build" parent="." unique_id=620539965 instance=ExtResource("2_f8ini")]
 
@@ -296,8 +296,50 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.8
 [node name="Lamb23" parent="Lights" unique_id=347424018 instance=ExtResource("3_05s15")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.878562, 3.0287185, 13.885768)
 
+[node name="Lamb37" parent="Lights" unique_id=435081238 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -12.031254, 3.0287185, 15.925904)
+
+[node name="Lamb38" parent="Lights" unique_id=1208202413 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -16.17429, 3.0287185, 15.925904)
+
+[node name="Lamb39" parent="Lights" unique_id=1485707636 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -12.031254, 3.0287185, 11.352025)
+
+[node name="Lamb40" parent="Lights" unique_id=182435569 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -16.17429, 3.0287185, 11.352025)
+
+[node name="Lamb41" parent="Lights" unique_id=140910625 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -12.031254, 3.0287185, 6.303873)
+
+[node name="Lamb42" parent="Lights" unique_id=2095205934 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -16.17429, 3.0287185, 6.303873)
+
+[node name="Lamb43" parent="Lights" unique_id=1027234097 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -12.031254, 3.0287185, 2.5856166)
+
+[node name="Lamb44" parent="Lights" unique_id=966981821 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -16.17429, 3.0287185, 2.5856166)
+
 [node name="Lamb24" parent="Lights" unique_id=484537117 instance=ExtResource("3_05s15")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.878562, 3.0287185, 22.322987)
+
+[node name="Lamb46" parent="Lights" unique_id=258974233 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.21920574, 3.0287185, 24.451988)
+
+[node name="Lamb47" parent="Lights" unique_id=316416946 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.644538, 3.0287185, 24.451988)
+
+[node name="Lamb50" parent="Lights" unique_id=1581812109 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.21920574, 3.0287185, 20.494844)
+
+[node name="Lamb51" parent="Lights" unique_id=3729659 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.644538, 3.0287185, 20.494844)
+
+[node name="Lamb48" parent="Lights" unique_id=193389597 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -0.21920574, 3.0287185, 29.041044)
+
+[node name="Lamb49" parent="Lights" unique_id=818000986 instance=ExtResource("3_05s15")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.644538, 3.0287185, 29.041044)
 
 [node name="Lamb25" parent="Lights" unique_id=1653429706 instance=ExtResource("3_05s15")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -6.878562, 3.0287185, -31.840193)
@@ -1521,21 +1563,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.2
 [node name="toilet_soap4" parent="." unique_id=1408624699 instance=ExtResource("36_jwwnp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.237688, 0.9559107, -30.528084)
 
-[node name="toilet_sink_pipe9" parent="." unique_id=33486431 instance=ExtResource("32_e1ctd")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -33.01593)
-
-[node name="toilet_sink_pipe10" parent="." unique_id=1412989659 instance=ExtResource("32_e1ctd")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.433217, 0.26110786, -32.020004)
-
-[node name="Mirror3" parent="." unique_id=318724861 instance=ExtResource("35_nr02g")]
-transform = Transform3D(-8.787614e-08, 0, -0.99999994, 0, 1, 0, 2.0103717, 0, -4.3711385e-08, -9.052658, 1.8946062, -31.512672)
-
-[node name="toilet_soap5" parent="." unique_id=185223039 instance=ExtResource("36_jwwnp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.239881, 0.9559107, -32.52424)
-
-[node name="toilet_soap6" parent="." unique_id=1675392298 instance=ExtResource("36_jwwnp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.237688, 0.9559107, -30.528084)
-
 [node name="toilet_poop" parent="." unique_id=416521994 instance=ExtResource("39_07nv7")]
 transform = Transform3D(0.49799556, 0, 0, 0, 0.49799556, 0, 0, 0, 0.49799556, -11.173933, 0.76363546, -16.716978)
 
@@ -2192,6 +2219,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.618125, 0.34352136, 19.346
 
 [node name="prin_plant2" parent="." unique_id=1382068062 instance=ExtResource("67_aqfe0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5796833, 0.34352112, 21.739187)
+
+[node name="toiletvincible" parent="." unique_id=266952763 instance=ExtResource("68_hl2gp")]
+transform = Transform3D(-1.3917805e-08, 0, -0.31840226, 0, 0.31840226, 0, 0.31840226, 0, -1.3917805e-08, 28.438343, 0.875405, 0.4357012)
 
 [editable path="Signs/Sign4"]
 [editable path="Signs/Sign5"]

@@ -3,6 +3,7 @@
 [ext_resource type="Shader" uid="uid://c1l16hkv5iv3q" path="res://shaders/m_sky.gdshader" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_sul5r"]
 [ext_resource type="PackedScene" uid="uid://c6c0itn24hp85" path="res://scenes/objects/portal.tscn" id="3_1h6gr"]
+[ext_resource type="AudioStream" uid="uid://dvu06gk8a0t8l" path="res://sounds/bgm/Truth of This World.mp3" id="4_5uub8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0sr1o"]
 shader = ExtResource("1_7h61r")
@@ -77,6 +78,12 @@ shape = SubResource("BoxShape3D_sul5r")
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("1_sul5r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040226936, 1.8741231, 0.24125195)
 
+[node name="Retro1" parent="PlayerCharacter/CameraHolder/Camera/ShaderFilter" parent_id_path=PackedInt32Array(307017552, 1096882083) index="0" unique_id=1549188797]
+visible = false
+
+[node name="Retro2" parent="PlayerCharacter/CameraHolder/Camera/ShaderFilter" parent_id_path=PackedInt32Array(307017552, 1096882083) index="1" unique_id=741134611]
+visible = true
+
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=888654941]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -15.563692, 0, 0)
 mesh = SubResource("PrismMesh_sul5r")
@@ -131,3 +138,12 @@ draw_pass_1 = SubResource("BoxMesh_7h61r")
 
 [node name="Portal" parent="." unique_id=368253394 instance=ExtResource("3_1h6gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431527, 1.7861814, 40.379944)
+achievement = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=303174563]
+stream = ExtResource("4_5uub8")
+autoplay = true
+bus = &"BGM"
+parameters/looping = true
+
+[editable path="PlayerCharacter"]

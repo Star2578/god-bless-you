@@ -7,5 +7,6 @@
 [node name="lamp2" parent="." unique_id=385707466 instance=ExtResource("1_x1enw")]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1202364465]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.12962121, 0)
 light_energy = 5.0
+shadow_enabled = true

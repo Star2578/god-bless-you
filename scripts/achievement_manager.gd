@@ -37,8 +37,8 @@ func unlock_achievement(id: String):
 			ending_text = "Eventhough you are invincible, you somehow cannot unstuck yourself from the locker"
 			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
 		elif id == "the_truth_of_this_world":
-			ending_title = "Realization"
-			ending_text = "Sweet dreams"
+			ending_title = "???"
+			ending_text = "All of this is a [REDACTED]. Until next time."
 			get_tree().change_scene_to_file("res://scenes/game/ending.tscn")
 
 

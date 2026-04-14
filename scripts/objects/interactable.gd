@@ -5,7 +5,7 @@ class_name Interactable
 @export var sounds: AudioStream = preload("res://sounds/sfx/freesoundsxx-object-fall-soft-275694_pPIA9oEB.mp3")
 @export_range(0.1, 5.0) var velocity_threshold: float = 0.5 # Min speed to play sound
 @export_range(0.1, 10.0) var force_scalar: float = 1.0     # Adjust volume sensitivity
-@export var max_sound_distance: float = 10
+@export var max_sound_distance: float = 20
 
 var rigid_body: RigidBody3D = null
 var sfx_player: AudioStreamPlayer3D = null

@@ -11,6 +11,7 @@
 [ext_resource type="Shader" uid="uid://c1l16hkv5iv3q" path="res://shaders/m_sky.gdshader" id="6_fpthd"]
 [ext_resource type="Texture2D" uid="uid://wy0n6kdjllfg" path="res://assets/icons/locker.png" id="7_73xsm"]
 [ext_resource type="Texture2D" uid="uid://bfv7h8envbltf" path="res://assets/icons/truth.png" id="8_21mov"]
+[ext_resource type="AudioStream" uid="uid://b4runam2n5cqd" path="res://sounds/bgm/Sleepless Night.mp3" id="12_nsdtn"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_e66b0"]
 viewport_path = NodePath("SubViewport")
@@ -277,6 +278,11 @@ amount = 30
 lifetime = 10.0
 process_material = SubResource("ParticleProcessMaterial_fpthd")
 draw_pass_1 = SubResource("BoxMesh_bto60")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=278409237]
+stream = ExtResource("12_nsdtn")
+autoplay = true
+bus = &"BGM"
 
 [connection signal="pressed" from="UI/VBoxContainer/PlayButton" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/OptionButton" to="." method="_on_option_pressed"]
