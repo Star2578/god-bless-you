@@ -2,9 +2,6 @@ extends CharacterBody3D
 
 class_name PlayerCharacter
 
-@export_group("GodBlessYou variables")
-@export var npc_interaction_range:int = 4.0
-
 @export_group("Movement variables")
 var move_speed: float
 var move_accel: float
@@ -77,7 +74,7 @@ var coyote_jump_on: bool = false
 @export var interact_prim_action: StringName = "play_char_interact_prim_action"
 @export var interact_m1_action: StringName = "play_char_interact_m1_action"
 @export var interact_m2_action: StringName = "play_char_interact_m2_action"
-@onready var input_actions_list : Array[StringName] = [move_forward_action, move_backward_action, move_left_action, move_right_action,
+@onready var input_actions_list : Array[StringName] = [move_forward_action, move_backward_action, move_left_action, move_right_action, 
 run_action, crouch_action, jump_action, interact_prim_action, interact_m1_action, interact_m2_action]
 @export var check_on_ready_if_inputs_registered : bool = true
 var default_input_actions : Dictionary
@@ -99,7 +96,7 @@ func _ready():
 	jump_cooldown = -1.0
 	nb_jumps_in_air_allowed_ref = nb_jumps_in_air_allowed
 	coyote_jump_cooldown_ref = coyote_jump_cooldown
-
+	
 	build_default_keybinding()
 	input_actions_check()
 	GameController.player = self
@@ -118,7 +115,7 @@ func build_default_keybinding():
 		interact_m1_action : [MouseButton.MOUSE_BUTTON_LEFT],
 		interact_m2_action : [MouseButton.MOUSE_BUTTON_RIGHT],
 	}
-
+	
 func input_actions_check():
 	#check if the input actions written in the editor are the same as the ones registered in the Input map, and if they are written correctly
 	#if not, add it to runtime Input map with default keybindings
@@ -127,26 +124,26 @@ func input_actions_check():
 		for input_action in InputMap.get_actions():
 			if input_action.begins_with(&"play_char_"):
 				registered_input_actions.append(input_action)
-
+				
 		for input_action in input_actions_list:
 			if input_action == &"":
 				assert(false, "There's an undefined input action")
-
+				
 			if not registered_input_actions.has(input_action):
 				var key_names = default_input_actions[input_action].map(func(key):
 					return OS.get_keycode_string(key)
 				)
-
+				
 				push_warning("'{input}' missing in InputMap, or input action wrongly named in the editor.\nAdding the '{input}' to runtime InputMap temporarily with the key/s: {keys}"
 				.format({"input": input_action, "keys": String(", ").join(key_names)}))
-
+				
 				InputMap.add_action(input_action)
 				for input_val in default_input_actions[input_action]:
 					var event: InputEvent
-
+					
 					# MouseButton constants are small integers (1-9)
 					# Key constants are very large integers (usually > 400,000)
-					if input_val < 32:
+					if input_val < 32: 
 						var mouse_event = InputEventMouseButton.new()
 						mouse_event.button_index = input_val
 						event = mouse_event
@@ -154,9 +151,9 @@ func input_actions_check():
 						var key_event = InputEventKey.new()
 						key_event.physical_keycode = input_val
 						event = key_event
-
+					
 					InputMap.action_add_event(input_action, event)
-
+					
 func _physics_process(_delta: float):
 	modify_physics_properties()
 
@@ -168,19 +165,19 @@ func modify_physics_properties():
 	last_frame_position = global_position #get play char global position every frame
 	last_frame_velocity = velocity #get play char velocity every frame
 	was_on_floor = !is_on_floor() #check if play char was on floor every frame
-
+	
 func gravity_apply(delta: float):
 	# if play char goes up, apply jump gravity
 	#otherwise, apply fall gravity
 	if not is_on_floor(): #no need to push play char if he's already on the floor
 		if velocity.y >= 0.0: velocity.y += jump_gravity * delta
 		elif velocity.y < 0.0: velocity.y += fall_gravity * delta
-
+		
 #use of 2 tweens to change the hitbox and model heights, relative to a specific state
 func tween_hitbox_height(state_hitbox_height : float):
 	var hitbox_tween: Tween = create_tween()
 	if hitbox != null:
-		hitbox_tween.tween_method(func(v): set_hitbox_height(v), hitbox.shape.height,
+		hitbox_tween.tween_method(func(v): set_hitbox_height(v), hitbox.shape.height, 
 		state_hitbox_height, height_change_duration)
 	#to avoid "no tweeners" error
 	else:
@@ -190,11 +187,11 @@ func tween_hitbox_height(state_hitbox_height : float):
 func set_hitbox_height(value: float):
 	if hitbox.shape is CapsuleShape3D:
 		hitbox.shape.height = value
-
+		
 func tween_model_height(state_model_height : float):
 	var model_tween: Tween = create_tween()
 	if model != null:
-		model_tween.tween_property(model, "scale:y",
+		model_tween.tween_property(model, "scale:y", 
 		state_model_height, height_change_duration)
 	#to avoid "no tweeners" error
 	else:
@@ -204,9 +201,3 @@ func tween_model_height(state_model_height : float):
 func out_of_bound():
 	if position.y < -500:
 		AchievementManager.unlock_achievement("trapped_in_the_void")
-
-func check_active_npc_radius():
-	if DialogueManager.is_open:
-		var dist = global_position.distance_to(DialogueManager.active_npc.global_position)
-		if dist > npc_interaction_range:
-			DialogueManager.end_dialogue()
