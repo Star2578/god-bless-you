@@ -12,14 +12,14 @@ func _physics_process(delta):
 
 	if held_object:
 		var distance = hold_pos.global_position.distance_to(held_object.global_position)
-
+		
 		if distance > break_distance:
 			held_object.global_position = hold_pos.global_position
 			return
-
+		
 		var target_vel = (hold_pos.global_position - held_object.global_position) * 20.0
 		held_object.linear_velocity = target_vel
-
+		
 		# Keep it from spinning wildly
 		held_object.angular_velocity = Vector3.ZERO
 
@@ -40,14 +40,14 @@ func interact_with():
 
 	if collide and collide is Interactable:
 		var x = collide as Interactable
-
+		
 		if x.pick3d:
 			if held_object:
 				release_object()
-
+			
 			pick_up(x.rigid_body)
 		else:
-			print("Start interact with ", x.name)
+			print("interact")
 			x.interact()
 
 func pick_up(body: RigidBody3D):
@@ -61,13 +61,13 @@ func pick_up(body: RigidBody3D):
 func throw():
 	held_object.gravity_scale = 1.0
 	held_object.set_collision_layer_value(1, true)
-
+	
 	var throw_dir = -play_char.cam.global_basis.z
-
+	
 	held_object.apply_central_impulse(throw_dir * throw_force * held_object.mass)
 	if held_object is Explosive:
 		held_object.was_thrown = true
-
+	
 	held_object = null
 	print("Object thrown!")
 

@@ -2,7 +2,6 @@
 
 [ext_resource type="Shader" uid="uid://c1l16hkv5iv3q" path="res://shaders/m_sky.gdshader" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_sul5r"]
-[ext_resource type="PackedScene" uid="uid://xe6ipqan5t45" path="res://scenes/characters/npcs/test_nav_npc.tscn" id="3_1h6gr"]
 [ext_resource type="PackedScene" uid="uid://c6c0itn24hp85" path="res://scenes/objects/portal.tscn" id="3_1h6gr"]
 [ext_resource type="AudioStream" uid="uid://dvu06gk8a0t8l" path="res://sounds/bgm/Truth of This World.mp3" id="4_5uub8"]
 
@@ -60,10 +59,6 @@ scale_max = 5.0
 [sub_resource type="BoxMesh" id="BoxMesh_7h61r"]
 size = Vector3(3, 0.2, 3)
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_ao3lx"]
-vertices = PackedVector3Array(-49.5, 0.4995, -49.5, -49.5, 0.4995, 49.5, 49.5, 0.4995, 49.5, 49.5, 0.4995, -49.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
-
 [node name="Node3D" type="Node3D" unique_id=1777575998]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1564026554]
@@ -81,7 +76,7 @@ mesh = SubResource("PlaneMesh_sul5r")
 shape = SubResource("BoxShape3D_sul5r")
 
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("1_sul5r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3042498, 1.8741231, 0.24125195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040226936, 1.8741231, 0.24125195)
 
 [node name="Retro1" parent="PlayerCharacter/CameraHolder/Camera/ShaderFilter" parent_id_path=PackedInt32Array(307017552, 1096882083) index="0" unique_id=1549188797]
 visible = false
@@ -140,16 +135,6 @@ amount = 30
 lifetime = 30.0
 process_material = SubResource("ParticleProcessMaterial_7h61r")
 draw_pass_1 = SubResource("BoxMesh_7h61r")
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=86361736]
-navigation_mesh = SubResource("NavigationMesh_ao3lx")
-
-[node name="test_nav_npc" parent="." unique_id=1481564702 instance=ExtResource("3_1h6gr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0483634, 0.00049972534, -4.848365)
-
-[node name="NavigationLink3D" type="NavigationLink3D" parent="." unique_id=1092566283]
-start_position = Vector3(0, 0.505, 0)
-end_position = Vector3(0, 0.47, -3.04)
 
 [node name="Portal" parent="." unique_id=368253394 instance=ExtResource("3_1h6gr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.431527, 1.7861814, 40.379944)

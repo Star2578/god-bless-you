@@ -1,5 +1,5 @@
 extends CharacterBody3D
-# class_name NPC
+class_name NPC
 
 @export_group("NPC Parameters")
 
