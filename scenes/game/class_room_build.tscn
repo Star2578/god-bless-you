@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cpx56qyo5aid1" path="res://scenes/class_room_build.tscn" id="2_f8ini"]
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="2_gqv1f"]
 [ext_resource type="PackedScene" uid="uid://qqg5d63765d4" path="res://scenes/objects/lamb.tscn" id="3_05s15"]
+[ext_resource type="PackedScene" uid="uid://cpawxrx873od3" path="res://scenes/characters/npcs/teacher_npc.tscn" id="3_8jxeh"]
 [ext_resource type="PackedScene" uid="uid://b6rkp0g2j4822" path="res://scenes/objects/locker.tscn" id="3_f8ini"]
 [ext_resource type="PackedScene" uid="uid://c1slbuou4eaa0" path="res://scenes/objects/sign.tscn" id="3_s0u11"]
 [ext_resource type="PackedScene" uid="uid://dfgl5ru48mfpn" path="res://scenes/objects/classroom/student_table.tscn" id="4_lddun"]
@@ -170,11 +171,36 @@ visible = false
 environment = SubResource("Environment_bu5ox")
 
 [node name="Classroom_NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=286648471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00018405914, -0.00015354156, 0.00018310547)
 navigation_mesh = ExtResource("2_b0fir")
 
-[node name="NavigationLink3D" type="NavigationLink3D" parent="Classroom_NavigationRegion3D" unique_id=1471091801]
-start_position = Vector3(14.14, 0.375, -2.929)
-end_position = Vector3(14.018802, 0.32619786, -4.8457284)
+[node name="Link_blackboardroomdoor" type="NavigationLink3D" parent="Classroom_NavigationRegion3D" unique_id=1988426380]
+enabled = false
+start_position = Vector3(4.2, 0.375, -2.929)
+end_position = Vector3(4.14, 0.316, -5.036)
+
+[node name="TeacherNPC" type="Node3D" parent="." unique_id=852745748]
+
+[node name="npc_teacher_man" parent="TeacherNPC" unique_id=823491164 node_paths=PackedStringArray("roaming_paths") instance=ExtResource("3_8jxeh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4587264, 0, -6)
+roaming_paths = NodePath("../Path")
+
+[node name="Path" type="Node3D" parent="TeacherNPC" unique_id=210658707]
+
+[node name="at_corridor" type="Marker3D" parent="TeacherNPC/Path" unique_id=59729679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.85027, 0.44334245, -5.9874897)
+
+[node name="at_corridor2" type="Marker3D" parent="TeacherNPC/Path" unique_id=1084682230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6428285, 0.44334245, -8.170552)
+
+[node name="at_room_door" type="Marker3D" parent="TeacherNPC/Path" unique_id=1193894215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0847697, 0.44334245, -3.1624966)
+
+[node name="at_blackboard" type="Marker3D" parent="TeacherNPC/Path" unique_id=1723414476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.408442, 0.44334245, -1.281158)
+
+[node name="at_principle_office" type="Marker3D" parent="TeacherNPC/Path" unique_id=2140387793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1576412, 0.44334245, 25.88175)
 
 [node name="PlayerCharacter" parent="." unique_id=307017552 instance=ExtResource("2_gqv1f")]
 transform = Transform3D(0.59999996, 0, -3.5527137e-15, 0, 0.59999996, 0, 3.5527137e-15, 0, 0.59999996, 16.638477, 0.7409233, -5.8743753)
@@ -182,24 +208,6 @@ walk_speed = 5.0
 run_speed = 7.0
 run_accel = 6.0
 run_deccel = 5.0
-
-[node name="TeacherManNPC" type="Node3D" parent="." unique_id=1182982773]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="npc_teacher_man" parent="TeacherManNPC" unique_id=1283309650 node_paths=PackedStringArray("roaming_paths") instance=ExtResource("43_u2wea")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.800757, 0, 18.373024)
-roaming_paths = NodePath("../Path")
-
-[node name="Path" type="Node3D" parent="TeacherManNPC" unique_id=1843149100]
-
-[node name="Marker3D" type="Marker3D" parent="TeacherManNPC/Path" unique_id=121766703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8157563, 0.38995636, 19.742935)
-
-[node name="Marker3D2" type="Marker3D" parent="TeacherManNPC/Path" unique_id=260120187]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5397716, 0.38995636, 22.77796)
-
-[node name="Marker3D3" type="Marker3D" parent="TeacherManNPC/Path" unique_id=955660880]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.375285, 0.38995636, 22.77796)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=574483698]
 transform = Transform3D(1, 0, 0, 0, 0.5478261, 0.83659226, 0, -0.83659226, 0.5478261, 0, 11.060055, 0)

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://addons/PlayerCharacter/player_character_scene.tscn" id="1_sul5r"]
 [ext_resource type="PackedScene" uid="uid://c6c0itn24hp85" path="res://scenes/objects/portal.tscn" id="3_1h6gr"]
 [ext_resource type="AudioStream" uid="uid://dvu06gk8a0t8l" path="res://sounds/bgm/Truth of This World.mp3" id="4_5uub8"]
+[ext_resource type="PackedScene" uid="uid://cpawxrx873od3" path="res://scenes/characters/npcs/teacher_npc.tscn" id="5_8hbwh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0sr1o"]
 shader = ExtResource("1_7h61r")
@@ -58,10 +59,6 @@ scale_max = 5.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_7h61r"]
 size = Vector3(3, 0.2, 3)
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_ao3lx"]
-vertices = PackedVector3Array(-49.5, 0.4995, -49.5, -49.5, 0.4995, 49.5, 49.5, 0.4995, 49.5, 49.5, 0.4995, -49.5)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [node name="Node3D" type="Node3D" unique_id=1777575998]
 
@@ -149,5 +146,8 @@ stream = ExtResource("4_5uub8")
 autoplay = true
 bus = &"BGM"
 parameters/looping = true
+
+[node name="npc_teacher_man" parent="." unique_id=823491164 instance=ExtResource("5_8hbwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4887986, 0.0005002022, -4.761814)
 
 [editable path="PlayerCharacter"]

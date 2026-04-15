@@ -3,7 +3,8 @@ extends CharacterBody3D
 class_name PlayerCharacter
 
 @export_group("GodBlessYou variables")
-@export var npc_interaction_range:int = 4.0
+@export var npc_interaction_range:int = 2.0
+@onready var ramming_area: Area3D = $RammingHitboxArea
 
 @export_group("Movement variables")
 var move_speed: float
@@ -103,11 +104,17 @@ func _ready():
 	build_default_keybinding()
 	input_actions_check()
 	GameController.player = self
-	
+	ramming_area.body_entered.connect(_on_ramming_area_body_entered)
+
 
 func _process(delta) -> void:
 	check_active_npc_radius()
 
+	var player_agent_obstacle:NavigationObstacle3D = find_child("NavigationObstacle3D",false)
+	if player_agent_obstacle and self.velocity.length() > 5.0 :
+		player_agent_obstacle.avoidance_enabled = false
+	else:
+		player_agent_obstacle.avoidance_enabled = true
 func build_default_keybinding():
 	#build it in runtime to ensure that export variables have been set
 	default_input_actions = {
@@ -167,7 +174,7 @@ func _physics_process(_delta: float):
 	move_and_slide()
 
 	out_of_bound()
-	
+
 func modify_physics_properties():
 	last_frame_position = global_position #get play char global position every frame
 	last_frame_velocity = velocity #get play char velocity every frame
@@ -214,3 +221,9 @@ func check_active_npc_radius():
 		var dist = global_position.distance_to(DialogueManager.active_npc.global_position)
 		if dist > npc_interaction_range:
 			DialogueManager.end_dialogue()
+
+func _on_ramming_area_body_entered(body):
+	if body is NPC:
+		var impact = velocity.length()
+		if impact >= body.collision_min_impact:
+			body.collapse(velocity.normalized() * body.impact_force)

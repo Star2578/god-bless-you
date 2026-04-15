@@ -15,8 +15,9 @@ signal dialogue_ended(npc)
 func proceed_dialogue(npc: NPCInteraction):
 	if npc != active_npc:
 		if is_open and active_npc != null:
-			_save_and_close()
+			_close_dialogue(false)
 		active_npc=npc
+		active_npc.npc_character.to_state(NPC.State.TALKING)
 		dialogue_index = npc.get_start_index()
 		is_open = true
 		dialogue_started.emit(npc)
@@ -26,9 +27,6 @@ func proceed_dialogue(npc: NPCInteraction):
 
 
 func show_line():
-	if dialogue_index >= active_npc.dialogues.size():
-		end_dialogue()
-		return
 	spawn_text(active_npc.dialogues[dialogue_index])
 
 
@@ -36,20 +34,23 @@ func show_line():
 
 func advance():
 	dialogue_index += 1
+	if dialogue_index >= active_npc.dialogues.size():
+		end_dialogue()
+		return
 	show_line()
 
 func end_dialogue():
 	if not is_open:
 		return
-	_save_and_close()
+	_close_dialogue(false)
 
-func _save_and_close():
+func _close_dialogue(save:bool):
 
 	var existing_dialogue:Label3D = active_npc.npc_character.find_child(active_npc.npc_character.name + "_dialogue",false,false)
 	if existing_dialogue:
 		existing_dialogue.queue_free()
 
-	active_npc.save_progress(dialogue_index)  # remember where we stopped
+	active_npc.save_progress(dialogue_index if save else -1)  # remember where we stopped
 	dialogue_ended.emit(active_npc)
 	active_npc = null
 	is_open = false
@@ -63,7 +64,7 @@ func spawn_text(text:String):
 	if existing_dialogue:
 		existing_dialogue.text = text
 	else:
-		var mid_point := (GameController.player_character.global_position + active_npc.global_position) / 2.0
+		var mid_point := (GameController.player.global_position + active_npc.global_position) / 2.0
 
 		# Offset relative to camera's orientation
 		var camera := get_viewport().get_camera_3d()

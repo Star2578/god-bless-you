@@ -25,3 +25,11 @@ shape = SubResource("CylinderShape3D_4suxk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=824033671]
 transform = Transform3D(1.2773439, 0, 0, 0, 1.2773439, 0, 0, 0, 1.2773439, 0, -0.34071293, 0)
 shape = SubResource("CylinderShape3D_4suxk")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=370257902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.13445769, 0)
+radius = 0.25
+
+[node name="NavigationObstacle3D2" type="NavigationObstacle3D" parent="." unique_id=57833764]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5854384, 0)
+radius = 0.2

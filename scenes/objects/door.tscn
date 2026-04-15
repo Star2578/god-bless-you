@@ -147,12 +147,12 @@ mesh = SubResource("ArrayMesh_kkngn")
 shape = SubResource("ConcavePolygonShape3D_1pnnq")
 
 [node name="Area3D" type="Area3D" parent="DoorMesh" unique_id=296674984]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2, 0, 0, 0.01)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("4_aji8h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/Area3D" unique_id=286478017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5, 0, 0, 0.03)
 shape = SubResource("ConcavePolygonShape3D_aji8h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="DoorMesh" unique_id=762715435]
@@ -163,5 +163,21 @@ libraries/ = SubResource("AnimationLibrary_hfw7n")
 unique_name_in_owner = true
 stream = ExtResource("5_w0irj")
 bus = &"SFX"
+
+[node name="ghost_obstacle" type="Node3D" parent="." unique_id=86729427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7998874, -0.42881906, 0)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="ghost_obstacle" unique_id=790596447]
+radius = 0.2
+
+[node name="Link_blackboardroomdoor" type="NavigationLink3D" parent="ghost_obstacle" unique_id=552143819]
+start_position = Vector3(-0.5, 0, -1)
+end_position = Vector3(-0.5, 0, 1)
+
+[node name="ghost_obstacle2" type="Node3D" parent="." unique_id=591032710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13801101, -0.41403228, 0)
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="ghost_obstacle2" unique_id=1657081287]
+radius = 0.2
 
 [connection signal="body_entered" from="DoorMesh/Area3D" to="DoorMesh/Area3D" method="_on_collide_with_door"]

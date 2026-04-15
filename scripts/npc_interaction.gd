@@ -18,9 +18,8 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
-	if dialogues:
+	if dialogues and self.npc_character.state != NPC.State.DEAD:
 		DialogueManager.proceed_dialogue(self)
-		npc_character.to_state(NPC.State.TALKING)
 
 func save_progress(index:int):
 	self.saved_idx = index
@@ -30,8 +29,5 @@ func get_start_index() -> int:
 	return self.saved_idx  # resume where they left off
 
 func stop_conversation():
-	print("prev:", npc_character.prev_state)
-	print("curr:", npc_character.state)
-	npc_character.to_state(npc_character.prev_state)
-	print("prev:", npc_character.prev_state)
-	print("curr:", npc_character.state)
+	var _prev:= npc_character.prev_state
+	npc_character.to_state(_prev)

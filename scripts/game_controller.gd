@@ -7,7 +7,6 @@ var player: PlayerCharacter
 enum GameState {MAIN_MENU,OPTION,INGAME_OPTION,GAME, END_CREDIT}
 
 var game_state:GameState = GameState.MAIN_MENU
-var player_character:PlayerCharacter
 
 signal state_changed(from: GameState, to: GameState)
 

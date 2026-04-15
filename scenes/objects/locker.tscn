@@ -214,5 +214,9 @@ script = ExtResource("4_fg4f7")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StuckInLocker?" unique_id=1688166238]
 shape = SubResource("BoxShape3D_folf4")
 
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=294070075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4213322, 0)
+radius = 0.55
+
 [connection signal="body_entered" from="StuckInLocker?" to="StuckInLocker?" method="_on_player_entered"]
 [connection signal="body_exited" from="StuckInLocker?" to="StuckInLocker?" method="_on_player_exited"]

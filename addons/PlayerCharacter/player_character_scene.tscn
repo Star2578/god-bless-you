@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d3s8yxuvpmekm" path="res://addons/PlayerCharacter/StateMachine/player_character_script.gd" id="1_h128t"]
 [ext_resource type="Script" uid="uid://b0fbr48rbvn27" path="res://addons/PlayerCharacter/Camera/camera_script.gd" id="2_x12n0"]
 [ext_resource type="Script" uid="uid://qnuv5xlitbvx" path="res://addons/PlayerCharacter/InteractHandler.gd" id="10_dwwo3"]
-[ext_resource type="Script" uid="uid://qnuv5xlitbvx" path="res://addons/PlayerCharacter/InteractHandler.gd" id="10_dwwo3"]
 [ext_resource type="Texture2D" uid="uid://dtliihyced2em" path="res://assets/hands/Untitled-1.png" id="10_i3yl6"]
 [ext_resource type="StyleBox" uid="uid://c50syhy1a4dmh" path="res://addons/PlayerCharacter/UI/player_character_ui_theme.tres" id="11_kcsu1"]
 [ext_resource type="LabelSettings" uid="uid://d1rg1oruwidf" path="res://addons/PlayerCharacter/UI/label_font_setting.tres" id="12_gnmoh"]
@@ -34,6 +33,8 @@ point_count = 2
 albedo_color = Color(0.196078, 0.223529, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p2iaj"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cdxyl"]
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=307017552 groups=["PlayerCharacter"]]
 collision_layer = 3
@@ -106,7 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7377934e-08, 0, -1.0838805)
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.050000012, 0)
 target_position = Vector3(-2.5, 0, 0)
-collision_mask = 2
+collision_mask = 32770
 collide_with_areas = true
 collide_with_bodies = false
 debug_shape_custom_color = Color(0, 1, 0, 1)
@@ -468,3 +469,13 @@ theme_override_font_sizes/font_size = 40
 text = "....."
 label_settings = ExtResource("12_gnmoh")
 vertical_alignment = 1
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="." unique_id=1082365566]
+radius = 0.55
+
+[node name="RammingHitboxArea" type="Area3D" parent="." unique_id=2090031978]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RammingHitboxArea" unique_id=629103082]
+shape = SubResource("CapsuleShape3D_cdxyl")
